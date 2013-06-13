@@ -2070,6 +2070,7 @@ function i_world_map_run_action($action, $id,$custom_action) { ?>
 		
 		if($action == 'i_map_action_custom') {
 		echo stripcslashes ( $custom_action );
+		alert('custom action');
 		}
 		
 	
