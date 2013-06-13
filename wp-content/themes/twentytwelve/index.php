@@ -16,12 +16,15 @@
 
 get_header(); ?>
 	
-	<?php build_i_world_map(1); 	?> 
+	<?php build_i_world_map(1);
 	<script>
 	if(ivalue_1[selectedRegion]=="CA"){
 		alert('true');
 	}
 	</script>
+	
+	 	?> 
+	
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
