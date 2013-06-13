@@ -15,7 +15,9 @@
  */
 
 get_header(); ?>
-
+	
+	<?php build_i_world_map(ID); ?> 
+	
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
@@ -39,7 +41,7 @@ get_header(); ?>
 				</header>
 				
 				
-				 <?php build_i_world_map(ID); ?> 
+				 
 				 
 				 
 				<div class="entry-content">
