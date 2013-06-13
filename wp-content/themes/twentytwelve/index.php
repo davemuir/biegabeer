@@ -16,8 +16,12 @@
 
 get_header(); ?>
 	
-	<?php build_i_world_map(1); ?> 
+	<?php build_i_world_map(1); 
+	if(ivalue_1[selectedRegion]==true){
+		alert('true');
+	}
 	
+	?> 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
