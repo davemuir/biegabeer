@@ -18,7 +18,7 @@ get_header(); ?>
 	
 	<?php build_i_world_map(1); 	?> 
 	<script>
-	if(ivalue_1[selectedRegion]==true){
+	if(ivalue_1[selectedRegion]=="CA"){
 		alert('true');
 	}
 	</script>
