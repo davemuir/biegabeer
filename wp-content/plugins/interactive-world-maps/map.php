@@ -2082,15 +2082,6 @@ function i_world_map_run_action($action, $id,$custom_action) { ?>
       });
     <?php
  }
-<?php 
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-			the_post(); 
-			//
-			// Post Content here
-			//
-		} // end while
-	} // end if
-?>	
+
 
 ?>
