@@ -20,6 +20,8 @@ global $wpdb;
 $table_name_imap = $wpdb->prefix . "i_world_map";
 $iwm_db_version = 3;
 
+ 
+	
 function i_world_map_install() {
 	
 	global $wpdb;
@@ -2007,7 +2009,7 @@ function i_world_map_build_region_select_options($name,$selected, $onchange) {
 					array('name' => 'Virgin Islands, U.S.', 'value' => 'VI,countries'),
 					array('name' => 'Virgin Islands, U.S. - Provinces', 'value' => 'VI,provinces'),
 					array('name' => 'Wallis and Futuna', 'value' => 'WF,countries'),
-					array('name' => 'Wallis and Futuna - Provinces', 'value' => 'WF,provinces'),
+					array('name' => 'Wallis and Futuna - Provinces', 'value' => 'WF,provinces'),	
 					array('name' => 'Western Sahara', 'value' => 'EH,countries'),
 					array('name' => 'Western Sahara - Provinces', 'value' => 'EH,provinces'),
 					array('name' => 'Yemen', 'value' => 'YE,countries'),
@@ -2080,6 +2082,15 @@ function i_world_map_run_action($action, $id,$custom_action) { ?>
       });
     <?php
  }
-
+<?php 
+	if ( have_posts() ) {
+		while ( have_posts() ) {
+			the_post(); 
+			//
+			// Post Content here
+			//
+		} // end while
+	} // end if
+?>	
 
 ?>
