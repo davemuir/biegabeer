@@ -25,6 +25,7 @@ function i_world_map_install() {
 	global $wpdb;
     global $iwm_db_version;	
     global $table_name_imap;
+	global $post;
 	
 	$charset_collate = "";
 	
