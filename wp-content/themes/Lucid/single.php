@@ -6,8 +6,10 @@
 	<div id="left-area">
 		<?php get_template_part('includes/breadcrumbs', 'single'); ?>
 		<?php get_template_part('loop', 'single'); ?>
+		
+	
 	</div> <!-- end #left_area -->
-	<h1>single post</h1>
+	
 	<?php if ( 'on' != $et_full_post ) get_sidebar(); ?>
 </div> 	<!-- end #content-area -->
 
