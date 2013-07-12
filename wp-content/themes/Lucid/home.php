@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php build_i_world_map(1); ?>
 <?php if ( 'on' == et_get_option('lucid_featured', 'on') && is_home() ) get_template_part( 'includes/featured', 'home' ); ?>
 
 <?php

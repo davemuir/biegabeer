@@ -46,7 +46,7 @@
 
 		<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
-
+			<?php the_meta(); ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages(array('before' => '<p><strong>'.esc_attr__('Pages','Lucid').':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			<?php edit_post_link(esc_attr__('Edit this page','Lucid')); ?>
