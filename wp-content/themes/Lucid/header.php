@@ -31,6 +31,7 @@
 		document.documentElement.className = 'js';
 	</script>
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/js/mapLoad.js" type="text/javascript"></script>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

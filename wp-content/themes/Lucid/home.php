@@ -1,5 +1,5 @@
 <?php get_header(); ?>
- <script type="text/javascript" src="./js/mapLoad.js"></script>
+ 
  <div id="atlasMap"><?php build_i_world_map(1); ?></div>
  <div id="canadaMap"><?php build_i_world_map(11);?> </div> 	
 <?php if ( 'on' == et_get_option('lucid_featured', 'on') && is_home() ) get_template_part( 'includes/featured', 'home' ); ?>

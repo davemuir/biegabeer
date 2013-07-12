@@ -1,4 +1,3 @@
-function(){
-	$('#canadaMap').hide();
-	
-};
+$(document).ready(function() {
+  $('#canadaMap').hide();
+});
