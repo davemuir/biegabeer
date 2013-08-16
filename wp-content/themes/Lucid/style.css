@@ -99,10 +99,28 @@ margin-bottom:61px;
 .latest-3-posts{
 width:319px;
 height:161px;
-border-right:1px solid grey;
 float:left;
 }
-
+.latest-3-header{
+width:319px;
+height:43px;
+border-right:1px solid #dbdbdb;
+}
+.latest-3-headerLast{
+width:320px;
+height:43px;
+border-right:none;
+}
+.latest-3-info{
+width:319px;
+height:118px;
+border-right:1px solid #dbdbdb;
+}
+.latest-3-infoLast{
+width:320px;
+height:118px;
+border-right:none;
+}
 .latest-3-postsLast{
 width:320px;
 height:161px;
@@ -119,7 +137,7 @@ background:white;
 .pagesInfoBox{
 width:319px;
 height:206px;
-border-right:1px solid grey;
+border-right:1px solid #dbdbdb;
 float:left;
 }
 .pagesInfoBoxLast{
