@@ -32,18 +32,31 @@
 				'field' => 'slug',
 				'terms' => 'post-format-aside',
 				'operator' => 'NOT IN'
-			), 
-			array(
-				'taxonomy' => 'post_format',
-				'field' => 'slug',
-				'terms' => 'post-format-image',
- 				'operator' => 'NOT IN'
+			
 			)
 	) );
 	$recent_posts = wp_get_recent_posts( $args );
 	foreach( $recent_posts as $recent ){
-	if(++$postCount !== POSTS_PER_PAGE){echo '<div class="latest-3-posts"><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			</div> ';}
-		else{echo '<div class="latest-3-postsLast"><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			</div> ';
+	if(++$postCount !== POSTS_PER_PAGE){echo '
+	<div class="latest-3-posts">
+		<div class="latest-3-header">	
+	<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			
+	</div> ';
+	
+	echo'<div class="latest-3-info">';
+	print_r(get_post_meta( $recent["ID"], "ABV", true ));
+	echo'</div></div>';
+
+}
+else{echo '<div class="latest-3-postsLast">
+		<div class="latest-3-headerLast">
+<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			
+	  </div> ';
+	
+
+	echo'<div class="latest-3-infoLast">';
+	print_r(get_post_meta( $recent["ID"], "ABV", true ));
+	echo'</div></div>';
 	}}
 	?>
 	
@@ -77,6 +90,8 @@
 		</div>
 		<div class="pagesInfoBoxLast">
 			<div class="pagesInfoBoxHeader">
+		
+
 			</div>
 		</div>
 	</div>
