@@ -122,11 +122,13 @@ margin-left:13px;
 width:319px;
 height:118px;
 border-right:1px solid #dbdbdb;
+font-size:13px;
 }
 .latest-3-infoLast{
 width:320px;
 height:118px;
 border-right:none;
+font-size:13px;
 }
 .latest-3-postsLast{
 width:320px;
@@ -161,6 +163,8 @@ height:44px;
 
 .3Info{
 float:left;
+
+height:206px;
 }
 .orange{
 color:#fda428;
