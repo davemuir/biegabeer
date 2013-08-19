@@ -24,6 +24,9 @@
 	<div id="latest-3">
 		
 	<?php
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size(90, 90);
+	
 	$postCount = 0;
 	define(POSTS_PER_PAGE,3);
 	$args = array( 'numberposts' => '3', 'tax_query' => array(
@@ -42,8 +45,10 @@
 		<div class="latest-3-header">	
 	<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			
 	</div> ';
-	
+	$image_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"]));
+
 	echo'<div class="latest-3-info">';
+	echo '<div style="width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;" ></div>';
 	print_r(get_post_meta( $recent["ID"], "ABV", true ));
 	echo'</div></div>';
 
@@ -53,8 +58,11 @@ else{echo '<div class="latest-3-postsLast">
 <a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			
 	  </div> ';
 	
+	$image_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"]));
+	
 
 	echo'<div class="latest-3-infoLast">';
+	echo '<div style="width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;" ></div>';
 	print_r(get_post_meta( $recent["ID"], "ABV", true ));
 	echo'</div></div>';
 	}}
