@@ -144,9 +144,8 @@ margin-bottom:42px;
 background:white;
 }
 .pagesInfoBox{
-width:319px;
+width:320px;
 height:206px;
-border-right:1px solid #dbdbdb;
 float:left;
 }
 .pagesInfoBoxLast{
@@ -157,8 +156,9 @@ float:left;
 }
 .pagesInfoBoxHeader{
 background:#fda428;
-width:auto;
+width:319px;
 height:44px;
+border-right:1px solid #d9922f;
 }
 
 .3Info{
@@ -168,6 +168,24 @@ height:206px;
 }
 .orange{
 color:#fda428;
+}
+.page_excerpt{
+height:163px;
+width:319px;
+border-right:1px solid #dbdbdb;
+position:absolute;
+}
+.page_excerpt p{
+margin-left:47px;
+margin-top:22px;
+font-size:14px;
+margin-right:17px;
+line-height:16px;
+}
+.page_excerptLast{
+height:163px;
+width:319px;
+position:absolute;
 }
 
 #main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/light_wool.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative; margin-bottom: 60px; }

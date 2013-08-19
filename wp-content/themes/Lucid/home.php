@@ -104,6 +104,9 @@ else{echo '<div class="latest-3-postsLast">
 				echo $page->post_title;
 			?>
 			</div>
+			<div class="page_excerpt">
+				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
+			</div>
 		</div>
 		<div class="pagesInfoBox">
 			<div class="pagesInfoBoxHeader">
@@ -114,6 +117,9 @@ else{echo '<div class="latest-3-postsLast">
 				echo $page->post_title;
 			?>
 			</div>
+			<div class="page_excerpt">
+				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
+			</div>
 		</div>
 		<div class="pagesInfoBoxLast">
 			<div class="pagesInfoBoxHeader">
@@ -123,6 +129,9 @@ else{echo '<div class="latest-3-postsLast">
 				//print_r($page);
 				echo $page->post_title;
 			?>
+			</div>
+			<div class="page_excerptLast">
+				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
 			</div>
 		</div>
 	</div>
@@ -137,6 +146,9 @@ else{echo '<div class="latest-3-postsLast">
 				echo $page->post_title;
 			?>
 			</div>
+			<div class="page_excerpt">
+				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
+			</div>
 		</div>
 		<div class="pagesInfoBox">
 			<div class="pagesInfoBoxHeader">
@@ -145,7 +157,11 @@ else{echo '<div class="latest-3-postsLast">
 				$page = get_page($pageID);
 				//print_r($page);
 				echo $page->post_title;
+				
 			?>
+			</div>
+			<div class="page_excerpt">
+				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
 			</div>
 		</div>
 		<div class="pagesInfoBoxLast">
@@ -158,6 +174,9 @@ else{echo '<div class="latest-3-postsLast">
 			?>
 		
 
+			</div>
+			<div class="page_excerptLast">
+				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
 			</div>
 		</div>
 	</div>
