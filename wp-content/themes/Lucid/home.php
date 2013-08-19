@@ -45,11 +45,22 @@
 		<div class="latest-3-header">	
 	<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			
 	</div> ';
+
 	$image_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"]));
+	$beerStyle = get_the_category( $recent["ID"] );
 
 	echo'<div class="latest-3-info">';
-	echo '<div style="width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;" ></div>';
-	print_r(get_post_meta( $recent["ID"], "ABV", true ));
+	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;" ></div>';
+	
+	echo '<div class="3Info">
+	       <br/>Style <span class="orange">: </span>'.$beerStyle[0]->cat_name.'
+	       <br/>Brewery <span class="orange">: </span>';
+		print_r(get_post_meta( $recent["ID"], "Brewery", true ));
+	echo '<br/>ABV <span class="orange">: </span>';
+		print_r(get_post_meta( $recent["ID"], "ABV", true ));
+	echo '
+		<br/><br/>Read the review <a href="' . get_permalink($recent["ID"]) . '">here</a>
+		</div>';
 	echo'</div></div>';
 
 }
@@ -62,8 +73,17 @@ else{echo '<div class="latest-3-postsLast">
 	
 
 	echo'<div class="latest-3-infoLast">';
-	echo '<div style="width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;" ></div>';
-	print_r(get_post_meta( $recent["ID"], "ABV", true ));
+	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;" ></div>';
+	
+	echo '<div class="3Info">
+	       <br/>Style <span class="orange">: </span>'.$beerStyle[0]->cat_name.'
+	       <br/>Brewery <span class="orange">: </span>';
+		print_r(get_post_meta( $recent["ID"], "Brewery", true ));
+	echo '<br/>ABV <span class="orange">: </span>';
+		print_r(get_post_meta( $recent["ID"], "ABV", true ));
+	echo '
+		<br/><br/>Read the review <a href="' . get_permalink($recent["ID"]) . '">here</a>
+		</div>';
 	echo'</div></div>';
 	}}
 	?>
@@ -74,15 +94,35 @@ else{echo '<div class="latest-3-postsLast">
 	</div>
 	<div class="pagesInfo">
 		<div class="pagesInfoBox">
+
+
 			<div class="pagesInfoBoxHeader">
+			<?php
+				$pageID = 11;
+				$page = get_page($pageID);
+				//print_r($page);
+				echo $page->post_title;
+			?>
 			</div>
 		</div>
 		<div class="pagesInfoBox">
 			<div class="pagesInfoBoxHeader">
+			<?php
+				$pageID = 201;
+				$page = get_page($pageID);
+				//print_r($page);
+				echo $page->post_title;
+			?>
 			</div>
 		</div>
 		<div class="pagesInfoBoxLast">
 			<div class="pagesInfoBoxHeader">
+			<?php
+				$pageID = 441;
+				$page = get_page($pageID);
+				//print_r($page);
+				echo $page->post_title;
+			?>
 			</div>
 		</div>
 	</div>
@@ -90,14 +130,32 @@ else{echo '<div class="latest-3-postsLast">
 	<div class="pagesInfo">
 		<div class="pagesInfoBox">
 			<div class="pagesInfoBoxHeader">
+			<?php
+				$pageID = 451;
+				$page = get_page($pageID);
+				//print_r($page);
+				echo $page->post_title;
+			?>
 			</div>
 		</div>
 		<div class="pagesInfoBox">
 			<div class="pagesInfoBoxHeader">
+			<?php
+				$pageID = 461;
+				$page = get_page($pageID);
+				//print_r($page);
+				echo $page->post_title;
+			?>
 			</div>
 		</div>
 		<div class="pagesInfoBoxLast">
 			<div class="pagesInfoBoxHeader">
+			<?php
+				$pageID = 471;
+				$page = get_page($pageID);
+				//print_r($page);
+				echo $page->post_title;
+			?>
 		
 
 			</div>
