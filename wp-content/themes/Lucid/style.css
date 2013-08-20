@@ -160,6 +160,10 @@ width:319px;
 height:44px;
 border-right:1px solid #d9922f;
 }
+.pagesInfoBoxHeader a{
+color:white;
+font-size:20px;
+}
 
 .3Info{
 float:left;

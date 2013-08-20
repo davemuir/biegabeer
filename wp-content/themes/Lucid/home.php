@@ -101,7 +101,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 11;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo $page->post_title;
+				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerpt">
@@ -114,7 +114,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 201;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo $page->post_title;
+				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerpt">
@@ -127,7 +127,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 441;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo $page->post_title;
+				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerptLast">
@@ -143,7 +143,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 451;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo $page->post_title;
+				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerpt">
@@ -156,7 +156,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 461;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo $page->post_title;
+				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 				
 			?>
 			</div>
@@ -170,7 +170,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 471;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo $page->post_title;
+				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 		
 

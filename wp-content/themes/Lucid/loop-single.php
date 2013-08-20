@@ -25,24 +25,7 @@
 
 			$et_video_url = get_post_meta( get_the_ID(), '_et_lucid_video_url', true );
 		?>
-		<?php if ( '' != $thumb && 'on' == et_get_option('lucid_thumbnails') ) { ?>
-			<div class="post-thumbnail">
-				<?php
-					if ( 'video' == get_post_format( get_the_ID() ) && '' != $et_video_url ){
-						$video_embed = $wp_embed->shortcode( '', $et_video_url );
-
-						$video_embed = preg_replace('/<embed /','<embed wmode="transparent" ',$video_embed);
-						$video_embed = preg_replace('/<\/object>/','<param name="wmode" value="transparent" /></object>',$video_embed);
-						$video_embed = preg_replace("/height=\"[0-9]*\"/", "height=350", $video_embed);
-						$video_embed = preg_replace("/width=\"[0-9]*\"/", "width={$width}", $video_embed);
-
-						echo $video_embed;
-					} else {
-						print_thumbnail($thumb, $thumbnail["use_timthumb"], $titletext, $width, $height, $classtext);
-					}
-				?>
-			</div> 	<!-- end .post-thumbnail -->
-		<?php } ?>
+		
 
 		<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
