@@ -101,7 +101,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 11;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
+				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/hopIcon.png"><a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerpt">
@@ -114,7 +114,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 201;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
+				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/bottleIcon.png"><a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerpt">
@@ -122,16 +122,16 @@ else{echo '<div class="latest-3-postsLast">
 			</div>
 		</div>
 		<div class="pagesInfoBoxLast">
-			<div class="pagesInfoBoxHeader">
+			<div class="pagesInfoBoxHeaderLast">
 			<?php
 				$pageID = 441;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
+				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/hopIcon.png"><a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerptLast">
-				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
+				<iframe id="iframecode" onload="" scrolling="no" frameborder="0" width="277" src="http://instaembedder.com/gallery.php?username=biegabeerandwine&amp;hashtag=&amp;width=56&amp;cols=4&amp;frame=1&amp;image_border=4&amp;rows=2&amp;cell_margin=5&amp;display_username=0&amp;likes=0&amp;comments=0&amp;date=0&amp;link=0&amp;caption=1&amp;color=gray" style="height: 155px;"></iframe>
 			</div>
 		</div>
 	</div>
@@ -143,7 +143,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 451;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
+				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/bottleIcon.png"><a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 			</div>
 			<div class="page_excerpt">
@@ -156,7 +156,7 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 461;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
+				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/hopIcon.png"><a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 				
 			?>
 			</div>
@@ -165,12 +165,12 @@ else{echo '<div class="latest-3-postsLast">
 			</div>
 		</div>
 		<div class="pagesInfoBoxLast">
-			<div class="pagesInfoBoxHeader">
+			<div class="pagesInfoBoxHeaderLast">
 			<?php
 				$pageID = 471;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo '<a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
+				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/bottleIcon.png"><a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
 			?>
 		
 
