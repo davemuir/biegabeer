@@ -2,7 +2,8 @@
  <img id="mapBack" src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/backButton.png">
  <div id="atlasMap"><?php build_i_world_map(1); ?></div>
  <div id="canadaMap"><?php build_i_world_map(11);?> </div> 
- <div id="argentinaMap"><?php build_i_world_map(21);?> </div> 		
+ <div id="argentinaMap"><?php build_i_world_map(21);?> </div> 	
+ 	<div id="australiaMap"><?php build_i_world_map(31); ?></div>
 <?php if ( 'on' == et_get_option('lucid_featured', 'on') && is_home() ) get_template_part( 'includes/featured', 'home' ); ?>
 
 <?php
