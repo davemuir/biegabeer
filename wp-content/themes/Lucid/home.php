@@ -1,5 +1,5 @@
 <?php get_header(); ?>
- <a href="javascript:history.go(-1)">back</a>
+ <a id="mapBack" href="#">back</a>
  <div id="atlasMap"><?php build_i_world_map(1); ?></div>
  <div id="canadaMap"><?php build_i_world_map(11);?> </div> 
  <div id="argentinaMap"><?php build_i_world_map(21);?> </div> 		
