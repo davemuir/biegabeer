@@ -3,7 +3,13 @@
  <div id="atlasMap"><?php build_i_world_map(1); ?></div>
  <div id="canadaMap"><?php build_i_world_map(11);?> </div> 
  <div id="argentinaMap"><?php build_i_world_map(21);?> </div> 	
- 	<div id="australiaMap"><?php build_i_world_map(31); ?></div>
+ <div id="australiaMap"><?php build_i_world_map(31); ?></div>
+ <div id="austriaMap"><?php build_i_world_map(41); ?></div>
+ <div id="barbadosMap"><?php build_i_world_map(51); ?></div>
+ <div id="belgiumMap"><?php build_i_world_map(61); ?></div>
+ <div id="bosniaMap"><?php build_i_world_map(71); ?></div>
+ <div id="brazilMap"><?php build_i_world_map(81); ?></div>
+ 
 <?php if ( 'on' == et_get_option('lucid_featured', 'on') && is_home() ) get_template_part( 'includes/featured', 'home' ); ?>
 
 <?php
