@@ -9,7 +9,30 @@
  <div id="belgiumMap"><?php build_i_world_map(61); ?></div>
  <div id="bosniaMap"><?php build_i_world_map(71); ?></div>
  <div id="brazilMap"><?php build_i_world_map(81); ?></div>
- 
+ <div id="mexicoMap"><?php build_i_world_map(91); ?></div>
+<div id="italyMap"><?php build_i_world_map(101); ?></div>
+<div id="franceMap"><?php build_i_world_map(111); ?></div>
+<div id="greeceMap"><?php build_i_world_map(121); ?></div>
+<div id="polandMap"><?php build_i_world_map(131); ?></div>
+<div id="czechMap"><?php build_i_world_map(141); ?></div>
+<div id="norwayMap"><?php build_i_world_map(151); ?></div>
+<div id="swedenMap"><?php build_i_world_map(161); ?></div>
+<div id="finlandMap"><?php build_i_world_map(171); ?></div>
+<div id="lithuaniaMap"><?php build_i_world_map(181); ?></div>
+<div id="denmarkMap"><?php build_i_world_map(191); ?></div>
+<div id="croatiaMap"><?php build_i_world_map(201); ?></div>
+<div id="estoniaMap"><?php build_i_world_map(211); ?></div>
+<div id="germanyMap"><?php build_i_world_map(221); ?></div>
+<div id="jamaicaMap"><?php build_i_world_map(231); ?></div>
+<div id="ukraineMap"><?php build_i_world_map(241); ?></div>
+<div id="russiaMap"><?php build_i_world_map(251); ?></div>
+<div id="slovakiaMap"><?php build_i_world_map(261); ?></div>
+<div id="hungaryMap"><?php build_i_world_map(271); ?></div>
+<div id="latviaMap"><?php build_i_world_map(281); ?></div>
+<div id="irelandMap"><?php build_i_world_map(291); ?></div>
+<div id="ukMap"><?php build_i_world_map(301); ?></div>
+<div id="spainMap"><?php build_i_world_map(311); ?></div>
+
 <?php if ( 'on' == et_get_option('lucid_featured', 'on') && is_home() ) get_template_part( 'includes/featured', 'home' ); ?>
 
 <?php
