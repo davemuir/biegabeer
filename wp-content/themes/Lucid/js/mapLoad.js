@@ -29,7 +29,36 @@ $(document).ready(function() {
     $('#latviaMap').hide(); 
      $('#irelandMap').hide(); 
       $('#ukMap').hide(); 
-       $('#spainMap').hide(); 
-           
+       $('#spainMap').hide();  
+           $('#chinaMap').hide(); 
+   $('#columbiaMap').hide(); 
+    $('#costaRicaMap').hide(); 
+     $('#cubaMap').hide(); 
+      $('#cyprusMap').hide(); 
+       $('#dominicaMap').hide(); 
+        $('#dominicanMap').hide(); 
+       $('#icelandMap').hide(); 
+    $('#indiaMap').hide(); 
+     $('#japanMap').hide(); 
+      $('#kenyaMap').hide(); 
+       $('#southKoreaMap').hide(); 
+        $('#lebanonMap').hide();
+    $('#netherlandsMap').hide(); 
+    $('#newZealandMap').hide(); 
+     $('#philippinesMap').hide(); 
+      $('#portugalMap').hide(); 
+       $('#romaniaMap').hide(); 
+        $('#serbiaMap').hide(); 
+       $('#singaporeMap').hide(); 
+    $('#sloveniaMap').hide(); 
+     $('#southAfricaMap').hide(); 
+      $('#srilankaMap').hide(); 
+       $('#switzerlandMap').hide(); 
+           $('#thailandMap').hide(); 
+   $('#trinidadMap').hide(); 
+    $('#turkeyMap').hide(); 
+     $('#venezuelaMap').hide(); 
+      $('#vietnamMap').hide(); 
+       
   $('#mapBack').hide();
 });

@@ -33,6 +33,38 @@
 <div id="ukMap"><?php build_i_world_map(301); ?></div>
 <div id="spainMap"><?php build_i_world_map(311); ?></div>
 
+<div id="chinaMap"><?php build_i_world_map(321); ?></div>
+<div id="columbiaMap"><?php build_i_world_map(331); ?></div>
+<div id="costaRicaMap"><?php build_i_world_map(341); ?></div>
+<div id="cubaMap"><?php build_i_world_map(351); ?></div>
+<div id="cyprusMap"><?php build_i_world_map(361); ?></div>
+<div id="dominicaMap"><?php build_i_world_map(371); ?></div>
+<div id="dominicanMap"><?php build_i_world_map(381); ?></div>
+<div id="icelandMap"><?php build_i_world_map(391); ?></div>
+<div id="indiaMap"><?php build_i_world_map(401); ?></div>
+<div id="japanMap"><?php build_i_world_map(411); ?></div>
+<div id="kenyaMap"><?php build_i_world_map(421); ?></div>
+<div id="southKoreaMap"><?php build_i_world_map(431); ?></div>
+<div id="lebanonMap"><?php build_i_world_map(441); ?></div>
+<div id="netherlandsMap"><?php build_i_world_map(451); ?></div>
+<div id="newZealandMap"><?php build_i_world_map(461); ?></div>
+<div id="philippinesMap"><?php build_i_world_map(471); ?></div>
+<div id="portugalMap"><?php build_i_world_map(481); ?></div>
+<div id="romaniaMap"><?php build_i_world_map(491); ?></div>
+<div id="serbiaMap"><?php build_i_world_map(501); ?></div>
+<div id="singaporeMap"><?php build_i_world_map(511); ?></div>
+<div id="sloveniaMap"><?php build_i_world_map(521); ?></div>
+<div id="southAfricaMap"><?php build_i_world_map(531); ?></div>
+<div id="srilankaMap"><?php build_i_world_map(541); ?></div>
+<div id="switzerlandMap"><?php build_i_world_map(551); ?></div>
+<div id="thailandMap"><?php build_i_world_map(561); ?></div>
+<div id="trinidadMap"><?php build_i_world_map(571); ?></div>
+<div id="turkeyMap"><?php build_i_world_map(581); ?></div>
+<div id="venezuelaMap"><?php build_i_world_map(591); ?></div>
+<div id="vietnamMap"><?php build_i_world_map(601); ?></div>
+
+
+
 <?php if ( 'on' == et_get_option('lucid_featured', 'on') && is_home() ) get_template_part( 'includes/featured', 'home' ); ?>
 
 <?php
