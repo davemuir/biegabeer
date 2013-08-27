@@ -46,8 +46,10 @@ Template Name: Pages by Region
 	 	?>
 			<?php 
 			if($variable == $postRegionVar){ 
+				$permalink = get_permalink($postID);
+				$title = get_the_title($postID);
 			?>
-			<li><a href="<?php post_permalink($postID) ?>"> <?php the_title($postID) ?></a></li>
+			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
 		
 	 		<?php } ?>
 		
