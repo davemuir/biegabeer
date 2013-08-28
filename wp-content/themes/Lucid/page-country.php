@@ -61,14 +61,14 @@ Template Name: Pages by Country
 <ul>
 <h3 id="a" class="byCountryLetter" >A</h3>
 <?php $args = array(
-	'posts_per_page'   => 5,
+	'posts_per_page'   => 2000,
 	'offset'           => 0,
 	'category'         => '',
-	'orderby'          => 'Country',
+	'orderby'          => 'meta_value',
 	'order'            => 'ASC',
 	'include'          => '',
 	'exclude'          => '',
-	'meta_key'         => '',
+	'meta_key'         => 'Country',
 	'meta_value'       => '',
 	'post_type'        => 'post',
 	'post_mime_type'   => '',
