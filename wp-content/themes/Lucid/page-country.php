@@ -57,9 +57,6 @@ Template Name: Pages by Country
 			<a href="#z">Z</a>
 			</div>
 <!--end wrap for original gets country terms-->		
-
-<ul>
-<h3 id="a" class="byCountryLetter" >A</h3>
 <?php $args = array(
 	'posts_per_page'   => 2000,
 	'offset'           => 0,
@@ -75,6 +72,10 @@ Template Name: Pages by Country
 	'post_parent'      => '',
 	'post_status'      => 'publish',
 	'suppress_filters' => true ); ?>
+
+
+<ul>
+<h3 id="a" class="byCountryLetter" >A</h3>
 <?php	
 	$myposts = get_posts( $args );
 	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
@@ -105,7 +106,134 @@ Template Name: Pages by Country
 	<?php endforeach; 
 	wp_reset_postdata();?>
 </ul>			
+<ul>
+<h3 id="b" class="byCountryLetter" >B</h3>
+<?php	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "B" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+	 	<?php }if($variable == "B" ){
+				$permalink = get_permalink($postID);
+				$title = get_the_title($postID);	
+			 ?>		
+			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
+		
+	 	<?php } ?>
 
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>			
+<ul>
+<h3 id="c" class="byCountryLetter" >C</h3>
+<?php	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "C" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+	 	<?php }if($variable == "C" ){
+				$permalink = get_permalink($postID);
+				$title = get_the_title($postID);	
+			 ?>		
+			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
+		
+	 	<?php } ?>
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>			
+<ul>
+<h3 id="d" class="byCountryLetter" >D</h3>
+<?php	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "D" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+	 	<?php }if($variable == "D" ){
+				$permalink = get_permalink($postID);
+				$title = get_the_title($postID);	
+			 ?>		
+			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
+		
+	 	<?php } ?>
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>
+<ul>
+<h3 id="e" class="byCountryLetter" >E</h3>
+<?php	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "E" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+	 	<?php }if($variable == "E" ){
+				$permalink = get_permalink($postID);
+				$title = get_the_title($postID);	
+			 ?>		
+			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
+		
+	 	<?php } ?>
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>						
 <!--start wrap again-->
 		
 <?php the_content(); ?>
