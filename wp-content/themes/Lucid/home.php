@@ -1,6 +1,6 @@
 <?php get_header(); ?>
  <img id="mapBack" src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/backButton.png">
- <div id="atlasMap"><?php build_i_world_map(1); ?></div>
+
  <div id="canadaMap"><?php build_i_world_map(11);?> </div> 
  <div id="argentinaMap"><?php build_i_world_map(21);?> </div> 	
  <div id="australiaMap"><?php build_i_world_map(31); ?></div>
@@ -83,7 +83,8 @@
 ?>
 
 <div id="content-area" class="clearfix">
-	
+<div class="shadowBox"><!--shadow box--> 
+<div id="atlasMap"><?php build_i_world_map(1); ?></div>	
 	<div id="latest-3">
 		
 	<?php
@@ -113,7 +114,7 @@
 	$beerStyle = get_the_category( $recent["ID"] );
 
 	echo'<div class="latest-3-info">';
-	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;" ></div>';
+	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;border:2px solid #fda428;" ></div>';
 	
 	echo '<div class="3Info">
 	       <br/>Style <span class="orange">: </span>'.$beerStyle[0]->cat_name.'
@@ -136,7 +137,7 @@ else{echo '<div class="latest-3-postsLast">
 	
 
 	echo'<div class="latest-3-infoLast">';
-	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;" ></div>';
+	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;border:2px solid #fda428;" ></div>';
 	
 	echo '<div class="3Info">
 	       <br/>Style <span class="orange">: </span>'.$beerStyle[0]->cat_name.'
@@ -149,12 +150,11 @@ else{echo '<div class="latest-3-postsLast">
 		</div>';
 	echo'</div></div>';
 	}}
-	?>
-	
-		
+	?>	
 
-	
 	</div>
+</div><!--shadow box-->
+<div class="shadowBox">
 	<div class="pagesInfo">
 		<div class="pagesInfoBox">
 
@@ -194,11 +194,12 @@ else{echo '<div class="latest-3-postsLast">
 			?>
 			</div>
 			<div class="page_excerptLast">
-				<iframe id="iframecode" onload="" scrolling="no" frameborder="0" width="277" src="http://instaembedder.com/gallery.php?username=biegabeerandwine&amp;hashtag=&amp;width=56&amp;cols=4&amp;frame=1&amp;image_border=4&amp;rows=2&amp;cell_margin=5&amp;display_username=0&amp;likes=0&amp;comments=0&amp;date=0&amp;link=0&amp;caption=1&amp;color=gray" style="height: 155px;"></iframe>
+				<iframe id="iframecode" onload="" scrolling="no" frameborder="0" width="269" src="http://instaembedder.com/gallery.php?username=biegabeerandwine&amp;hashtag=&amp;width=56&amp;cols=4&amp;frame=1&amp;image_border=3&amp;rows=2&amp;cell_margin=5&amp;display_username=0&amp;likes=0&amp;comments=0&amp;date=0&amp;link=0&amp;caption=0&amp;color=gray" style="height: 155px;"></iframe>
 			</div>
 		</div>
 	</div>
-
+</div><!--end box shadow-->
+<div class="shadowBox">
 	<div class="pagesInfo">
 		<div class="pagesInfoBox">
 			<div class="pagesInfoBoxHeader">
@@ -243,7 +244,7 @@ else{echo '<div class="latest-3-postsLast">
 			</div>
 		</div>
 	</div>
-		
+</div><!--end box shadow-->		
 	</div>
 </div> <!-- end #content-area -->
 
