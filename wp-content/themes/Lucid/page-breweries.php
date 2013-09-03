@@ -1,4 +1,8 @@
-
+<?php
+/*
+Template Name: Pages by Breweries
+*/
+?>
 <?php get_header(); ?>
 
 <div id="content-area" class="clearfix fullwidth">
