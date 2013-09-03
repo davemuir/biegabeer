@@ -1,8 +1,4 @@
-<?php
-/*
-Template Name: Pages by Country
-*/
-?>
+
 <?php get_header(); ?>
 
 <div id="content-area" class="clearfix fullwidth">
