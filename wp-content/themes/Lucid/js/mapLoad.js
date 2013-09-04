@@ -59,6 +59,7 @@ $(document).ready(function() {
     $('#turkeyMap').hide(); 
      $('#venezuelaMap').hide(); 
       $('#vietnamMap').hide(); 
+      	$('#unitedStatesMap').hide(); 
        
   $('#mapBack').hide();
 });

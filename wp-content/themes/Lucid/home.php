@@ -32,7 +32,7 @@
 <div id="irelandMap"><?php build_i_world_map(291); ?></div>
 <div id="ukMap"><?php build_i_world_map(301); ?></div>
 <div id="spainMap"><?php build_i_world_map(311); ?></div>
-
+<div id="unitedStatesMap"><?php build_i_world_map(611); ?></div>
 <div id="chinaMap"><?php build_i_world_map(321); ?></div>
 <div id="columbiaMap"><?php build_i_world_map(331); ?></div>
 <div id="costaRicaMap"><?php build_i_world_map(341); ?></div>
