@@ -66,17 +66,28 @@ Template Name: Pages by Country
 	'include'          => '',
 	'exclude'          => '',
 	'meta_key'         => 'Country',
+	'meta_key'         => 'Brewery',
 	'meta_value'       => '',
 	'post_type'        => 'post',
 	'post_mime_type'   => '',
 	'post_parent'      => '',
 	'post_status'      => 'publish',
-	'suppress_filters' => true ); ?>
-
-
+	'suppress_filters' => true 
+);
+?>
 <ul>
+<?php 
+session_start(); 
+$brew = $_SESSION["brew"];
+
+
+
+
+echo '<a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew='.$brew.'">link</a>';
+?>
 <h3 id="a" class="byCountryLetter" >A</h3>
-<?php	
+<?php		
+	
 	$myposts = get_posts( $args );
 	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 		<?php 
@@ -91,21 +102,42 @@ Template Name: Pages by Country
 			if($variable == "A" && $once = 1 && $setRegion != $postRegionVar){ 
 				$setRegion = $postRegionVar;
 				$once = 2;
+				
 			?>
 				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
 				
 		
-	 	<?php }if($variable == "A" ){
-				$permalink = get_permalink($postID);
-				$title = get_the_title($postID);	
-			 ?>		
-			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
 		
 	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "A" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
 
 	<?php endforeach; 
 	wp_reset_postdata();?>
-</ul>			
+</ul>	
+<?php echo $thing; ?>		
 <ul>
 <h3 id="b" class="byCountryLetter" >B</h3>
 <?php	

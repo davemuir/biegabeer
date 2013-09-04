@@ -12,6 +12,9 @@ Template Name: Pages by Breweries
 <!--start wrap-->
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
+		
+		<?php $brew = $_GET['brew']; 
+			echo $brew; ?>
 		<?php
 			$thumb = '';
 			$width = (int) apply_filters('et_blog_image_width',630);
