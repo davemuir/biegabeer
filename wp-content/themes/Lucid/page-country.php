@@ -75,16 +75,13 @@ Template Name: Pages by Country
 	'suppress_filters' => true 
 );
 ?>
-<ul>
+
 <?php 
 session_start(); 
 $brew = $_SESSION["brew"];
 
-
-
-
-echo '<a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew='.$brew.'">link</a>';
 ?>
+<ul>
 <h3 id="a" class="byCountryLetter" >A</h3>
 <?php		
 	
@@ -137,10 +134,10 @@ endif;
 	<?php endforeach; 
 	wp_reset_postdata();?>
 </ul>	
-<?php echo $thing; ?>		
 <ul>
 <h3 id="b" class="byCountryLetter" >B</h3>
-<?php	
+<?php		
+	
 	$myposts = get_posts( $args );
 	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 		<?php 
@@ -155,117 +152,41 @@ endif;
 			if($variable == "B" && $once = 1 && $setRegion != $postRegionVar){ 
 				$setRegion = $postRegionVar;
 				$once = 2;
+				
 			?>
 				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
 				
 		
-	 	<?php }if($variable == "B" ){
-				$permalink = get_permalink($postID);
-				$title = get_the_title($postID);	
-			 ?>		
-			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
 		
 	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "B" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
 
 	<?php endforeach; 
 	wp_reset_postdata();?>
 </ul>			
-<ul>
-<h3 id="c" class="byCountryLetter" >C</h3>
-<?php	
-	$myposts = get_posts( $args );
-	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-		<?php 
-	
-		$postID = get_the_ID();
-		$postRegionVar = get_post_meta($postID, "Country", true );
-		$variable = substr($postRegionVar, 0, 1);
-		$once = 1;
-	 	?>
-			
-			<?php 
-			if($variable == "C" && $once = 1 && $setRegion != $postRegionVar){ 
-				$setRegion = $postRegionVar;
-				$once = 2;
-			?>
-				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
-				
-		
-	 	<?php }if($variable == "C" ){
-				$permalink = get_permalink($postID);
-				$title = get_the_title($postID);	
-			 ?>		
-			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
-		
-	 	<?php } ?>
-
-	<?php endforeach; 
-	wp_reset_postdata();?>
-</ul>			
-<ul>
-<h3 id="d" class="byCountryLetter" >D</h3>
-<?php	
-	$myposts = get_posts( $args );
-	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-		<?php 
-	
-		$postID = get_the_ID();
-		$postRegionVar = get_post_meta($postID, "Country", true );
-		$variable = substr($postRegionVar, 0, 1);
-		$once = 1;
-	 	?>
-			
-			<?php 
-			if($variable == "D" && $once = 1 && $setRegion != $postRegionVar){ 
-				$setRegion = $postRegionVar;
-				$once = 2;
-			?>
-				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
-				
-		
-	 	<?php }if($variable == "D" ){
-				$permalink = get_permalink($postID);
-				$title = get_the_title($postID);	
-			 ?>		
-			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
-		
-	 	<?php } ?>
-
-	<?php endforeach; 
-	wp_reset_postdata();?>
-</ul>
-<ul>
-<h3 id="e" class="byCountryLetter" >E</h3>
-<?php	
-	$myposts = get_posts( $args );
-	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-		<?php 
-	
-		$postID = get_the_ID();
-		$postRegionVar = get_post_meta($postID, "Country", true );
-		$variable = substr($postRegionVar, 0, 1);
-		$once = 1;
-	 	?>
-			
-			<?php 
-			if($variable == "E" && $once = 1 && $setRegion != $postRegionVar){ 
-				$setRegion = $postRegionVar;
-				$once = 2;
-			?>
-				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
-				
-		
-	 	<?php }if($variable == "E" ){
-				$permalink = get_permalink($postID);
-				$title = get_the_title($postID);	
-			 ?>		
-			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
-		
-	 	<?php } ?>
-
-	<?php endforeach; 
-	wp_reset_postdata();?>
-</ul>						
 <!--start wrap again-->
 		
 <?php the_content(); ?>

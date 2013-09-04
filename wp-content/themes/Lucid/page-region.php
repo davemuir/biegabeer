@@ -28,7 +28,8 @@ Template Name: Pages by Region
 		<?php } ?>
 				<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
-<!--end wrap for original gets-->		
+<!--end wrap for original gets-->	
+<ul class="longList">	
 <?php 
 	$variable = $_GET['var'];
 	
@@ -41,7 +42,7 @@ Template Name: Pages by Region
 		<?php 
 	
 		$postID = get_the_ID();
-		$postRegionVar = get_post_meta($postID, "regionVar", true );
+		$postRegionVar = get_post_meta($postID, "Region", true );
 	
 	 	?>
 			<?php 
@@ -58,7 +59,7 @@ Template Name: Pages by Region
 	<?php endforeach; 
 	wp_reset_postdata();?>
 
-
+</ul>
 <!--start wrap again-->
 		
 <?php the_content(); ?>
