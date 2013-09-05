@@ -25,12 +25,25 @@
 
 			$et_video_url = get_post_meta( get_the_ID(), '_et_lucid_video_url', true );
 		?>
-		
 
 		<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
-			<?php the_meta(); ?>
-			<?php $et_full_post = get_post_meta( get_the_ID(), '_et_full_post', true ); ?>
+			<?php 
+			$id = get_the_ID();
+			$brewery = get_post_meta($id, "Brewery", true ); 
+			$country = get_post_meta($id, "Country", true ); 
+			$region = get_post_meta($id, "Region", true ); 
+			$abv = get_post_meta($id, "ABV", true ); 
+			$postImg = get_post_meta($id, "postImage", true );
+			$brewerInfo = get_post_meta($id, "breweryInfo", true );
+			 ?>
+			<img src="<?php echo $postImg; ?>" />
+			<ul>
+			<li>Brewery : <?php echo $brewery ?></li>
+			<li>Country : <?php echo $country ?></li>
+			<li>Region : <?php echo $region ?></li>
+			<li>ABV : <?php echo $abv ?></li>
+			</ul>
 			<?php the_content(); ?>
 			<?php wp_link_pages(array('before' => '<p><strong>'.esc_attr__('Pages','Lucid').':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			<?php edit_post_link(esc_attr__('Edit this page','Lucid')); ?>

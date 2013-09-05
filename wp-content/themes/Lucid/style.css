@@ -234,6 +234,10 @@ padding-top:10px;
 .longList{
 margin-top:16px;
 }
+.textwidget{
+line-height:16px;
+}
+
 #main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/light_wool.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative; margin-bottom: 60px; }
 #main-header:before { content: ''; position: absolute; height: 7px; bottom: -7px; left: 0; background: url(images/shadow.png) no-repeat top center; width: 100%; }
 	.container { text-align: left; margin: 0 auto; width: 960px; position: relative; }
@@ -507,7 +511,7 @@ html[xmlns] .slides {display: block;}
 		.footer-widget { float: left; border-left: 1px solid #f3f3f3; padding: 24px 20px 27px 40px; width: 258px; }
 		.footer-widget.last { border-right: 1px solid #f3f3f3; }
 		.footer-widget h4.widgettitle { text-shadow: 1px 1px 0 #fff; color: #4c4c4c; font-size: 16px; padding-bottom: 53px; }
-		.footer-widget li { padding: 0px 40px 28px 12px; font-size: 16px; }
+		.footer-widget li { padding: 0px 40px 28px 12px; font-size: 14px; }
 			.footer-widget li a { text-decoration: none; color: #4c4c4c; }
 			.footer-widget p { line-height: 28px; }
 	#bottom-advertisment { border-top: 1px solid #eee; }
