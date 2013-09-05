@@ -17,16 +17,17 @@
 		}
 	?>
 
-	<?php if ( 'on' == et_get_option('lucid_thumbnails_index','on') && '' != $thumb ){ ?>
-		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php print_thumbnail($thumb, $thumbnail["use_timthumb"], $titletext, $width, $height, $classtext); ?>
-				<span class="overlay"></span>
-			</a>
-		</div> 	<!-- end .post-thumbnail -->
-	<?php } ?>
+
 	<div class="post_content clearfix">
-		<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<?php if ( 'on' == et_get_option('lucid_thumbnails_index','on') && '' != $thumb ){ ?>
+		
+			<a href="<?php the_permalink(); ?>">
+				
+				<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url(<?php echo $thumb; ?>) no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;border:2px solid #fda428;" ></div>
+			</a>
+		
+	<?php } ?><h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			
 		<?php
 			if ( 'on' == et_get_option('lucid_blog_style') ) the_content('');
 			else echo '<p>' . truncate_post(170,false) . '</p>';
