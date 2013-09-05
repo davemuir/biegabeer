@@ -39,7 +39,39 @@ Template Name: Pages by Breweries
 
 			
 			<div class="post_content clearfix">
-			<h1 class="title"><?php echo $brew; ?></h1>		
+			<h1 class="title"><?php echo $brew; ?></h1>	
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+		$postID = get_the_ID();
+		$postBreweryVar = get_post_meta($postID, "Brewery", true );
+		$postBreweryInfoVar = get_post_meta($postID, "breweryInfo", true );
+		$breweryLink =  get_post_meta($postID, "breweryLink", true );
+		$permalink = get_permalink($postID);	
+	 	?>
+		
+		<?php 
+			if($brew == $postBreweryVar){ 
+						
+			?>
+			<p class="breweryInfo">
+				<?php echo $postBreweryInfoVar; ?><br/>
+				<a href="<?php echo $breweryLink ;?>">visit the official <?php echo $brew; ?> website</a>
+			</p>
+				
+		
+		
+	 	<?php } ?>
+		
+
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+	
 			<ul class="longList">
 <!--end wrap for original gets country terms-->		
 <?php $args = array(

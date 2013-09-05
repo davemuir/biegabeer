@@ -237,7 +237,16 @@ margin-top:16px;
 .textwidget{
 line-height:16px;
 }
+.breweryinfo{
+margin-top:20px;
 
+}
+.postImage{
+margin-top:32px;
+}
+.beerStats{
+margin-top:32px;
+}
 #main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/light_wool.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative; margin-bottom: 60px; }
 #main-header:before { content: ''; position: absolute; height: 7px; bottom: -7px; left: 0; background: url(images/shadow.png) no-repeat top center; width: 100%; }
 	.container { text-align: left; margin: 0 auto; width: 960px; position: relative; }
