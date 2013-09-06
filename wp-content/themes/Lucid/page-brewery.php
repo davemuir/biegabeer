@@ -29,7 +29,56 @@ Template Name: Pages by Brewery
 				<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
 <!--end wrap for original gets-->		
+<?php $args = array(
+	'posts_per_page'   => 2000,
+	'offset'           => 0,
+	'category'         => '',
+	'orderby'          => 'meta_value',
+	'order'            => 'ASC',
+	'include'          => '',
+	'exclude'          => '',
+	'meta_key'         => 'Brewery',
+	'meta_value'       => '',
+	'post_type'        => 'post',
+	'post_mime_type'   => '',
+	'post_parent'      => '',
+	'post_status'      => 'publish',
+	'suppress_filters' => true ); ?>
 
+
+<ul>
+<h3 id="a" class="byCountryLetter" >A</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Brewery", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "A" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+	 	<?php }if($variable == "A" ){
+				$permalink = get_permalink($postID);
+				$title = get_the_title($postID);	
+			 ?>		
+			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
+		
+	 	<?php } ?>
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
 <!--start wrap again-->
 		
 <?php the_content(); ?>

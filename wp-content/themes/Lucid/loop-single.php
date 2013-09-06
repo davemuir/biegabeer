@@ -37,8 +37,8 @@
 			$postImg = get_post_meta($id, "postImage", true );
 			$brewerInfo = get_post_meta($id, "breweryInfo", true );
 			 ?>
-			<img src="<?php echo $postImg; ?>" />
-			<ul>
+			<img class="postImage" src="<?php echo $postImg; ?>" />
+			<ul class="beerStats">
 			<li>Brewery : <?php echo $brewery ?></li>
 			<li>Country : <?php echo $country ?></li>
 			<li>Region : <?php echo $region ?></li>
