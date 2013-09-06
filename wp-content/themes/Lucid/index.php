@@ -9,11 +9,14 @@
 			$description = category_description($catID);
 			 ?>
 		<div class="catDescription">
-		<p>
+		
 		<h2 class="title"><?php echo $categor[0]->cat_name ; ?></h2>
+		<div class="catDescriptionText">
+		<p>
 		<?php echo $categor[0]->description; ?>
 		</p>
-</div>
+		</div>
+		</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php get_template_part('includes/entry', 'index'); ?>
 		<?php

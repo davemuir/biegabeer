@@ -254,6 +254,21 @@ color:orange;
 .catDescription{
 background:white;
 width:630px;
+margin-bottom:32px;
+border:1px solid #e5e5e5;
+}
+.catDescriptionText{
+margin-left:44px;
+margin-top:10px;
+margin-right:15px;
+
+}
+h2.title{
+ font-size: 30px;
+ font-weight: lighter;
+ color: #4c4c4c; 
+margin-left:44px;
+padding-top:32px;
 }
 #main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/light_wool.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative; margin-bottom: 60px; }
 #main-header:before { content: ''; position: absolute; height: 7px; bottom: -7px; left: 0; background: url(images/shadow.png) no-repeat top center; width: 100%; }
@@ -347,7 +362,7 @@ width:630px;
 			.entry .meta-info a { text-decoration: none; color: #888888; }
 		.entry .post-thumbnail { position: relative; line-height: 0; }
 			.entry .post-thumbnail .overlay { position: absolute; -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.3); -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3); box-shadow: inset 0 0 10px rgba(0,0,0,0.3); left: 0; top: 0; width: 100%; height: 100%; }
-		.entry h2.title, h1.title { font-size: 30px; font-weight: lighter; color: #4c4c4c; }
+		.entry h2.title,  h1.title { font-size: 30px; font-weight: lighter; color: #4c4c4c; }
 			.entry h2.title a { text-decoration: none; color: #4c4c4c; }
 			.entry h2.title a:hover { color: #111; }
 
