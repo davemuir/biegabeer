@@ -268,7 +268,6 @@ h2.title{
  font-weight: lighter;
  color: #4c4c4c; 
 margin-left:44px;
-padding-top:32px;
 }
 #main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/light_wool.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative; margin-bottom: 60px; }
 #main-header:before { content: ''; position: absolute; height: 7px; bottom: -7px; left: 0; background: url(images/shadow.png) no-repeat top center; width: 100%; }
@@ -366,7 +365,7 @@ padding-top:32px;
 			.entry h2.title a { text-decoration: none; color: #4c4c4c; }
 			.entry h2.title a:hover { color: #111; }
 
-		.post_content { padding: 36px 15px 30px 44px; }
+		.post_content { padding: 36px 15px 10px 44px; }
 			.post_content a.more { position: relative; top: 0; padding-right: 14px; float: right; }
 
 .category-box .recent_even { background: #fff; }
