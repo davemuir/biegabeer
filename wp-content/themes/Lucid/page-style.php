@@ -28,11 +28,22 @@ Template Name: Pages by Style
 		<?php } ?>
 				<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
+			<?php the_content(); ?>
 <!--end wrap for original gets-->		
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+foreach ( $categories as $category ) {
+	echo '<a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a><br/>';
+}
+?>
 
 <!--start wrap again-->
 		
-<?php the_content(); ?>
+
 			<?php wp_link_pages(array('before' => '<p><strong>'.esc_attr__('Pages','Lucid').':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			<?php edit_post_link(esc_attr__('Edit this page','Lucid')); ?>			
 				</div> 	<!-- end .post_content -->

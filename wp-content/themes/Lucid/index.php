@@ -3,7 +3,17 @@
 <div id="content-area" class="clearfix">
 	<div id="left-area">
 		<?php get_template_part('includes/breadcrumbs', 'index'); ?>
-
+		<?php 
+			$catID = get_the_ID();
+			$categor = get_the_category($catID);
+			$description = category_description($catID);
+			 ?>
+		<div class="catDescription">
+		<p>
+		<h2 class="title"><?php echo $categor[0]->cat_name ; ?></h2>
+		<?php echo $categor[0]->description; ?>
+		</p>
+</div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php get_template_part('includes/entry', 'index'); ?>
 		<?php
