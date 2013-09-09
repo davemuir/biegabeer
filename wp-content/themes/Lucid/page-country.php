@@ -5,7 +5,7 @@ Template Name: Pages by Country
 ?>
 <?php get_header(); ?>
 
-<div id="content-area" class="clearfix fullwidth">
+<div id="content-area" class="clearfix ">
 	
 	<div id="left-area">
 		<?php get_template_part('includes/breadcrumbs', 'page'); ?>
@@ -186,7 +186,908 @@ endif;
 
 	<?php endforeach; 
 	wp_reset_postdata();?>
-</ul>			
+</ul>	
+<ul>
+<h3 id="c" class="byCountryLetter" >C</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "C" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "C" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="d" class="byCountryLetter" >D</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "D" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "D" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="e" class="byCountryLetter" >E</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "E" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "E" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="f" class="byCountryLetter" >F</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "F" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "F" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>
+<ul>
+<h3 id="g" class="byCountryLetter" >G</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "G" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "G" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="i" class="byCountryLetter" >I</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "I" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "I" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="j" class="byCountryLetter" >J</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "J" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "J" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="k" class="byCountryLetter" >K</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "K" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "K" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="l" class="byCountryLetter" >L</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "L" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "L" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="m" class="byCountryLetter" >M</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "M" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "M" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="n" class="byCountryLetter" >N</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "N" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "N" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="p" class="byCountryLetter" >P</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "P" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "P" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="r" class="byCountryLetter" >R</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "R" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "R" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="s" class="byCountryLetter" >S</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "S" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "S" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="t" class="byCountryLetter" >T</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "T" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "T" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="u" class="byCountryLetter" >U</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "U" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "U" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>	
+<ul>
+<h3 id="v" class="byCountryLetter" >V</h3>
+<?php		
+	
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<?php 
+	
+		$postID = get_the_ID();
+		$postRegionVar = get_post_meta($postID, "Country", true );
+		$variable = substr($postRegionVar, 0, 1);
+		$once = 1;
+	 	?>
+			
+			<?php 
+			if($variable == "V" && $once = 1 && $setRegion != $postRegionVar){ 
+				$setRegion = $postRegionVar;
+				$once = 2;
+				
+			?>
+				<h3 class="byCountryName"> <?php echo $postRegionVar ?> </h3>
+				
+		
+		
+	 	<?php } ?>
+			
+
+				<?php 
+					$the_query = new WP_Query( $args );
+					if ( $the_query->have_posts() ) :
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+						$postBreweryVar = get_post_meta($postID, "Brewery", true );
+				
+				if($variable == "V" && $postBreweryVar != "" && $setBrewery != $postBreweryVar){
+					$permalink = get_permalink($postID);
+					$title = get_the_title($postID);
+					$setBrewery = $postBreweryVar;
+					$brew = $postBreweryVar;
+				 ?>		
+				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
+		
+	 			<?php } 
+					
+ 
+endwhile;
+endif;
+	?>
+
+				
+
+	<?php endforeach; 
+	wp_reset_postdata();?>
+</ul>																																																						
 <!--start wrap again-->
 		
 <?php the_content(); ?>
@@ -204,7 +1105,7 @@ endif;
 		
 	</div> <!-- end #left-area -->
 	
-	
+	<?php if ( ! $fullwidth ) get_sidebar(); ?>
 </div> 	<!-- end #content-area -->
 
 <?php get_footer(); ?>

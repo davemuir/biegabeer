@@ -5,7 +5,7 @@ Template Name: Pages by Style
 ?>
 <?php get_header(); ?>
 
-<div id="content-area" class="clearfix fullwidth">
+<div id="content-area" class="clearfix">
 	
 	<div id="left-area">
 		<?php get_template_part('includes/breadcrumbs', 'page'); ?>
@@ -28,8 +28,7 @@ Template Name: Pages by Style
 		<?php } ?>
 				<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
-			<?php the_content(); 
-	?>
+			<?php the_content(); ?>
 <div class="alphaSelector">
 			<a href="#a">A</a>
 			<a href="#b">B</a>
@@ -83,7 +82,7 @@ foreach ( $categories as $category) {
 }
 ?>
 </ul>		
-<h3 id="a" class="byCountryLetter" >B</h3>
+<h3 id="b" class="byCountryLetter" >B</h3>
 <ul>
 <?php
 $args = array(
@@ -106,10 +105,397 @@ foreach ( $categories as $category) {
 }
 ?>
 </ul>		
+<h3 id="c" class="byCountryLetter" >C</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
 
 
 
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
 
+	if( $categoryLetter == "C"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="d" class="byCountryLetter" >D</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "D"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="e" class="byCountryLetter" >E</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "E"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="f" class="byCountryLetter" >F</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "F"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="g" class="byCountryLetter" >G</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "G"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>
+<h3 id="h" class="byCountryLetter" >H</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "H"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="i" class="byCountryLetter" >I</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "I"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="k" class="byCountryLetter" >K</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "K"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="l" class="byCountryLetter" >L</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "L"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="m" class="byCountryLetter" >M</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "M"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>
+<h3 id="o" class="byCountryLetter" >O</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "O"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>
+<h3 id="p" class="byCountryLetter" >P</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "P"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="r" class="byCountryLetter" >R</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "R"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="s" class="byCountryLetter" >S</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "S"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="t" class="byCountryLetter" >T</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "T"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>	
+<h3 id="v" class="byCountryLetter" >V</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "V"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>
+<h3 id="w" class="byCountryLetter" >W</h3>
+<ul>
+<?php
+$args = array(
+  'orderby' => 'name',
+  'parent' => 0
+  );
+$categories = get_categories( $args );
+
+
+
+foreach ( $categories as $category) { 
+	
+	$catName = $category->name;
+	$categoryLetter = substr($catName, 0, 1);
+
+	if( $categoryLetter == "W"){
+	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	}
+
+}
+?>
+</ul>					
 <!--start wrap again-->
 		
 
@@ -127,7 +513,7 @@ foreach ( $categories as $category) {
 		
 	</div> <!-- end #left-area -->
 	
-	
+	<?php if ( ! $fullwidth ) get_sidebar(); ?>
 </div> 	<!-- end #content-area -->
 
 <?php get_footer(); ?>
