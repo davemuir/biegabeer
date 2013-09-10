@@ -74,9 +74,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "A"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -97,9 +99,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "B"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -120,9 +124,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "C"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -143,9 +149,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "D"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -166,9 +174,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "E"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -189,9 +199,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "F"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -212,9 +224,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "G"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -235,9 +249,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "H"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -258,9 +274,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "I"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -281,9 +299,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "K"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -304,9 +324,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "L"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -327,9 +349,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "M"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -350,9 +374,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "O"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -373,9 +399,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "P"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -396,9 +424,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "R"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -419,9 +449,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "S"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -442,9 +474,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "T"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -465,9 +499,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "V"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
@@ -488,9 +524,11 @@ foreach ( $categories as $category) {
 	
 	$catName = $category->name;
 	$categoryLetter = substr($catName, 0, 1);
+	$brew = $category->cat_ID;
+	$style = $catName;
 
 	if( $categoryLetter == "W"){
-	echo '<li><a href="' . get_category_link( $category->term_id ) . '"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
 }
