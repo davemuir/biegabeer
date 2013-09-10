@@ -41,7 +41,7 @@ Template Name: Pages by Recent
 	
 	$postCount = 0;
 	define(POSTS_PER_PAGE,10);
-	$args = array( 'numberposts' => '10', 'tax_query' => array(
+	$args = array( 'numberposts' => '10', 'category__not_in' => array(871, 881),'tax_query' => array(
 			array(
 				'taxonomy' => 'post_format',
 				'field' => 'slug',

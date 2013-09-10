@@ -93,15 +93,16 @@
 	
 	$postCount = 0;
 	define(POSTS_PER_PAGE,3);
-	$args = array( 'numberposts' => '3', 'tax_query' => array(
+	$args = array( 'numberposts' => '3','category__not_in' => array(871, 881), 'tax_query' => array(
 			array(
 				'taxonomy' => 'post_format',
 				'field' => 'slug',
 				'terms' => 'post-format-aside',
 				'operator' => 'NOT IN'
-			
+				
 			)
 	) );
+	
 	$recent_posts = wp_get_recent_posts( $args );
 	foreach( $recent_posts as $recent ){
 	if(++$postCount !== POSTS_PER_PAGE){echo '

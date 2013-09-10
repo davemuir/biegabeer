@@ -515,6 +515,7 @@ foreach ( $categories as $category) {
 $args = array(
   'orderby' => 'name',
   'parent' => 0
+  'category__not_in' => array(871, 881),
   );
 $categories = get_categories( $args );
 
