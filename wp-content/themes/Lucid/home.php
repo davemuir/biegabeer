@@ -152,7 +152,7 @@ else{echo '<div class="latest-3-postsLast">
 	echo'</div></div>';
 	}}
 	?>	
-
+<!--end foreach-->
 	</div>
 </div><!--shadow box-->
 <div class="shadowBox">
@@ -235,13 +235,39 @@ else{echo '<div class="latest-3-postsLast">
 				$pageID = 471;
 				$page = get_page($pageID);
 				//print_r($page);
-				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/bottleIcon.png"><a href="'.get_page_link($pageID).'">'.$page->post_title.'</a>';
+				echo '<img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/bottleIcon.png"><a href="http://biegamanmaptest.herokuapp.com/?cat=881">'.$page->post_title.'</a>';
 			?>
 		
 
 			</div>
 			<div class="page_excerptLast">
-				<?php echo '<p>'.$page->post_excerpt.'</p>'; ?>
+<?php				
+				add_theme_support('post-thumbnails');
+				set_post_thumbnail_size(90, 90);
+				$postCount = 0;
+				define(POSTS_PER_PAGE,2);
+				$args = array( 'numberposts' => '2','category__in' => array(881), 'tax_query' => array(
+				array(
+				'taxonomy' => 'post_format',
+				'field' => 'slug',
+				'terms' => 'post-format-aside',
+				'operator' => 'NOT IN'
+				
+			)
+	) );
+	
+				$recent_posts = wp_get_recent_posts( $args );
+				foreach( $recent_posts as $recent ){
+				if(++$postCount !== POSTS_PER_PAGE){
+					$image_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"]));
+					$page = get_page($recent["ID"]);
+
+					echo '<div style="height:69px;margin-top:12px;"><div style="margin-right:12px;float:left;margin-left:16px;width:59px;height:59px;-webkit-box-shadow:inset 0 0 0 1px rgba(0, 0, 0, 0.12);box-shadow:inset 0 0 0 1px rgba(0, 0, 0, 0.12);background: url('.$image_thumb[0].') no-repeat;background-size:100% auto;" ></div>';		
+			echo '<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a>' ;
+			echo '<p style="font-size:14px;line-height:16px;">'.$page->post_excerpt.'</p></div>'; 
+			
+				}}
+?>
 			</div>
 		</div>
 	</div>
