@@ -64,6 +64,7 @@ Template Name: Pages by Style
 <?php
 $args = array(
   'orderby' => 'name',
+   'category__not_in' => array(871, 881),
   'parent' => 0
   );
 $categories = get_categories( $args );
@@ -414,6 +415,7 @@ foreach ( $categories as $category) {
 <?php
 $args = array(
   'orderby' => 'name',
+   'category__not_in' => array(871, 881),
   'parent' => 0
   );
 $categories = get_categories( $args );
@@ -427,7 +429,7 @@ foreach ( $categories as $category) {
 	$brew = $category->cat_ID;
 	$style = $catName;
 
-	if( $categoryLetter == "R"){
+	if( $categoryLetter == "R" && $catName != "Recipes"){
 	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
@@ -439,6 +441,7 @@ foreach ( $categories as $category) {
 <?php
 $args = array(
   'orderby' => 'name',
+   'category__not_in' => array(871, 881),
   'parent' => 0
   );
 $categories = get_categories( $args );
@@ -452,7 +455,7 @@ foreach ( $categories as $category) {
 	$brew = $category->cat_ID;
 	$style = $catName;
 
-	if( $categoryLetter == "S"){
+	if( $categoryLetter == "S" && $catName != "Suggested Readings"){
 	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
@@ -464,6 +467,7 @@ foreach ( $categories as $category) {
 <?php
 $args = array(
   'orderby' => 'name',
+   'category__not_in' => array(871, 881),
   'parent' => 0
   );
 $categories = get_categories( $args );
@@ -477,7 +481,7 @@ foreach ( $categories as $category) {
 	$brew = $category->cat_ID;
 	$style = $catName;
 
-	if( $categoryLetter == "T"){
+	if( $categoryLetter == "T" && $catName != "Travel"){
 	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a></li>';
 	}
 
@@ -514,8 +518,9 @@ foreach ( $categories as $category) {
 <?php
 $args = array(
   'orderby' => 'name',
-  'parent' => 0
   'category__not_in' => array(871, 881),
+  'parent' => 0
+  
   );
 $categories = get_categories( $args );
 
