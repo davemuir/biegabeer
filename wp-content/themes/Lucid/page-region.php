@@ -33,9 +33,26 @@ Template Name: Pages by Region
 <?php 
 	$variable = $_GET['var'];
 	
-		
+	?>
+<?php $args = array(
+	'posts_per_page'   => 2000,
+	'offset'           => 0,
+	'category'         => '',
+	'orderby'          => 'meta_value',
+	'order'            => 'ASC',
+	'include'          => '',
+	'exclude'          => '',
+	'meta_key'         => 'Region',
+	'meta_value'       => '',
+	'post_type'        => 'post',
+	'post_mime_type'   => '',
+	'post_parent'      => '',
+	'post_status'      => 'publish',
+	'suppress_filters' => true 
+);
+?>
+<?php	
 
-	$args = array();
 
 	$myposts = get_posts( $args );
 	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
