@@ -38,12 +38,14 @@
 			$brewerInfo = get_post_meta($id, "breweryInfo", true );
 			 ?>
 			<img class="postImage" src="<?php echo $postImg; ?>" />
+		<?php if($brewery != ""){ ?>
 			<ul class="beerStats">
 			<li>Brewery : <?php echo $brewery ?></li>
 			<li>Country : <?php echo $country ?></li>
 			<li>Region : <?php echo $region ?></li>
 			<li>ABV : <?php echo $abv ?></li>
 			</ul>
+		<?php } ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages(array('before' => '<p><strong>'.esc_attr__('Pages','Lucid').':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			<?php edit_post_link(esc_attr__('Edit this page','Lucid')); ?>
