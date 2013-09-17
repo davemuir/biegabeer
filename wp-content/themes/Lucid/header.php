@@ -92,7 +92,7 @@
 		$use_header_banner = et_get_option( 'lucid_468_header_enable', 'false' );
 	?>
 
-	<div class="container">
+	
 		<div id="logo-area"<?php if ( 'on' == $use_header_banner ) echo ' class="header_banner clearfix"'; ?>>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php
@@ -113,7 +113,7 @@
 				</div> <!-- end #top_banner -->
 			<?php } ?>
 		</div>
-	</div> <!-- end .container -->
+	
 	<div id="secondary-menu">
 		<div class="container">
 			<?php do_action('et_secondary_menu'); ?>
