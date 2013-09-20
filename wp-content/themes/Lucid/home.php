@@ -1,5 +1,6 @@
 <?php get_header(); ?>
  <img id="mapBack" src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/backButton.png">
+ <img id="mapBack" src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/recentreviews.png">
 
  <div id="canadaMap"><?php build_i_world_map(11);?> </div> 
  <div id="argentinaMap"><?php build_i_world_map(21);?> </div> 	
