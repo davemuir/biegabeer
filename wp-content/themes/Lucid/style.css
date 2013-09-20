@@ -222,6 +222,14 @@ margin-top:400px;
 margin-left:13px;
 z-index:5;
 }
+#recentBar{
+position:absolute;
+width:280px;
+height:77px;
+margin-top:400px;
+margin-left:-19px;
+z-index:5;
+}
 .byCountryLetter{
 padding-top:36px;
 }
