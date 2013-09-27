@@ -284,7 +284,7 @@ margin-left:44px;
 margin-left:44px;
 padding-top:32px;
 }
-#main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/ricepaper2.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative;  }
+#main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/ricepaper3.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative;  }
 #main-header:before { content: ''; position: absolute; height: 7px; bottom: -7px; left: 0; background: url(images/shadow.png) no-repeat top center; width: 100%; }
 	.container { text-align: left; margin: 0 auto; width: 960px; position: relative;line-height:1; }
 		#top-menu { border-right: 1px solid #e5e5e5; padding: 0 18px 0 23px; float: left; }
@@ -315,7 +315,7 @@ padding-top:32px;
 			#second-menu .main_text { color: #4b4b4b; }
 
 			#second-menu ul > li.current-menu-item > a { font-weight: bold; }
-#main-area {  background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/ricepaper2.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; padding-bottom: 60px; }
+#main-area {  background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/ricepaper3.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; padding-bottom: 60px; }
 #featured_section { margin: -59px 0 56px; }
 	#featured { position:relative; }
 			#switcher { border: 1px solid #e5e5e5; border-top: none; position: relative; background-color: #fff; }
