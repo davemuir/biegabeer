@@ -36,14 +36,19 @@
 			$abv = get_post_meta($id, "ABV", true ); 
 			$postImg = get_post_meta($id, "postImage", true );
 			$brewerInfo = get_post_meta($id, "breweryInfo", true );
+			$style = get_the_category();
+			$category_id = get_cat_ID( $style[0]->cat_name );
+
 			 ?>
 			<img class="postImage" src="<?php echo $postImg; ?>" />
 		<?php if($brewery != ""){ ?>
 			<ul class="beerStats">
-			<li>Brewery : <?php echo $brewery ?></li>
-			<li>Country : <?php echo $country ?></li>
-			<li>Region : <?php echo $region ?></li>
-			<li>ABV : <?php echo $abv ?></li>
+			<li>Style : <a href="<?php echo get_category_link($category_id); ?>"><?php echo $style[0]->cat_name; ?></a></li>
+			<li>Brewery : <a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brewery; ?> "><?php echo $brewery; ?></a></li>
+			<li>Country : <a href="http://biegamanmaptest.herokuapp.com/?page_id=1161#<?php echo $country; ?>"><?php echo $country; ?></a></li>
+			
+			<li>Region : <?php echo $region; ?></li>
+			<li>ABV : <?php echo $abv; ?></li>
 			</ul>
 		<?php } ?>
 			<?php the_content(); ?>
