@@ -93,9 +93,6 @@
 			<?php } ?>
 		</div>
 	
-	<div id="main-area">
-		<div class="container">
-
 	<div id="secondary-menu">
 		<div class="container">
 			<?php do_action('et_secondary_menu'); ?>
@@ -120,5 +117,7 @@
 					else echo($primaryNav);
 				?>
 			</nav>
-		</div>
+		</div> <!-- end .container -->
 	</div> <!-- end #secondary-menu -->
+	<div id="main-area">
+		<div class="container">
