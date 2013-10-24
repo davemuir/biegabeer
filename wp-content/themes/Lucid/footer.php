@@ -36,6 +36,16 @@
 				</div> <!-- end .container -->
 			</div>
 		<?php } ?>
+	<div class="container">
+		<div class="footerSocial">
+			<div class="socialButtons">
+			<a href="#" id="facebookSocial"><img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/facebookSocial.png"></a>
+			<a href="#" id=""><img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/twitterSocial.png"></a>
+			<a href="#" id=""><img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/instaSocial.png"></a>
+			<a href="#" id=""><img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/mailSocial.png"></a>	
+			</div>
+		</div>
+	</div>
 	</footer> <!-- end #main-footer -->
 
 
