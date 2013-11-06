@@ -15,8 +15,23 @@ Template Name: Pages by Breweries
 	<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
 <?php $brew = $_GET['brew']; 
 			?>		
+	<?php $count = 1; ?>
+	<?php $args = array(
+	'posts_per_page'   => 2000,
+	'offset'           => 0,
+	'category'         => '',
+	'orderby'          => 'meta_value',
+	'order'            => 'ASC',
+	'include'          => '',
+	'exclude'          => '',
+	'meta_key'         => 'Brewery',
+	'meta_value'       => '',
+	'post_type'        => 'post',
+	'post_mime_type'   => '',
+	'post_parent'      => '',
+	'post_status'      => 'publish',
+	'suppress_filters' => true ); ?>
 	
-		
 		
 
 
@@ -53,17 +68,20 @@ Template Name: Pages by Breweries
 	 	?>
 		
 		<?php 
-			if($brew == $postBreweryVar){ 
+			
+			if($brew == $postBreweryVar && $count <= 1){ 
 						
 			?>
 			<p class="breweryInfo">
 				<?php echo $postBreweryInfoVar; ?><br/>
-				<a href="<?php echo $breweryLink ;?>">visit the official <?php echo $brew; ?> website</a>
+				<a href="<?php echo $breweryLink ;?>">visit the official <?php echo $brew; ?> website</a>			
 			</p>
 				
 		
 		
-	 	<?php } ?>
+	 	<?php 
+
+$count= 2;  } ?>
 		
 
 
@@ -89,7 +107,7 @@ Template Name: Pages by Breweries
 	'post_parent'      => '',
 	'post_status'      => 'publish',
 	'suppress_filters' => true ); ?>
-
+	
 <?php		
 	
 	$myposts = get_posts( $args );
