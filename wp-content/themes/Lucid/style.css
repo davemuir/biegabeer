@@ -297,6 +297,23 @@ margin-left:44px;
 margin-left:44px;
 padding-top:32px;
 }
+.previous page-numbers{
+padding:2px;
+background:white;
+float:left;
+}
+.next page-numbers{
+padding:2px;
+background:white;
+float:left;
+}
+.page-numbers{
+padding:5px;
+background:white;
+float:left;
+margin-left:10px;
+}
+
 #main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/ricepaper3.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative;  }
 #main-header:before { content: ''; position: absolute; height: 7px; bottom: -7px; left: 0; background: url(images/shadow.png) no-repeat top center; width: 100%; }
 	.container { text-align: left; margin: 0 auto; width: 960px; position: relative;line-height:1; }

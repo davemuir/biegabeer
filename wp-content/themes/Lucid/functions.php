@@ -9,6 +9,9 @@ if ( ! function_exists( 'my_pagination' ) ) :
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var('paged') ),
+			'prev_next'    => True,
+	'prev_text'    => __('<div class="previous">« Previous</div>'),
+	'next_text'    => __('<div class="next">Next »</div>'),
 			'total' => $wp_query->max_num_pages
 		) );
 	}

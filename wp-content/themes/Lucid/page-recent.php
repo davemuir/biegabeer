@@ -44,13 +44,10 @@ Template Name: Pages by Recent
 	$args = array( 'posts_per_archive_page' => 10,'nopaging' => false,
 			
 	'prev_next'    => True,
-	'prev_text'    => 'Previous',
+	'prev_text'    => '<-Previous',
 'current'      => 0,
 'show_all'     => False,
-	'end_size'     => 1,
-	'mid_size'     => 2,
-	'next_text'    => __('Next »'),
-	'type'         => 'plain',
+	
 'paged' => get_query_var('paged'), 
 
 			   'category__not_in' => array(871, 881),'tax_query' => array(
@@ -123,7 +120,7 @@ Template Name: Pages by Recent
 
 <?php endwhile; // end of the loop. ?>	
 
-
+<div id="pagination">
 <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -134,6 +131,7 @@ query_posts(array(
 ));
 
 ?>
+</div>
 <?php my_pagination();?>
 	</div> <!-- end #left-area -->	
 <?php if ( ! $fullwidth ) get_sidebar(); ?>
