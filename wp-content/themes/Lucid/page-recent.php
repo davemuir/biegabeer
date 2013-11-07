@@ -40,8 +40,20 @@ Template Name: Pages by Recent
 	set_post_thumbnail_size(90, 90);
 	
 	$postCount = 0;
-	define(POSTS_PER_PAGE,10);
-	$args = array( 'numberposts' => '10', 'category__not_in' => array(871, 881),'tax_query' => array(
+	
+	$args = array( 'posts_per_archive_page' => 10,'nopaging' => false,
+			
+	'prev_next'    => True,
+	'prev_text'    => 'Previous',
+'current'      => 0,
+'show_all'     => False,
+	'end_size'     => 1,
+	'mid_size'     => 2,
+	'next_text'    => __('Next »'),
+	'type'         => 'plain',
+'paged' => get_query_var('paged'), 
+
+			   'category__not_in' => array(871, 881),'tax_query' => array(
 			array(
 				'taxonomy' => 'post_format',
 				'field' => 'slug',
@@ -96,7 +108,12 @@ Template Name: Pages by Recent
 	<?php
 
 }
+
 }
+
+
+
+
 	?>		
 <!--start wrap again-->
 
@@ -106,7 +123,18 @@ Template Name: Pages by Recent
 
 <?php endwhile; // end of the loop. ?>	
 
-	
+
+<?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+query_posts(array(
+	'post_type'      => 'post', // You can add a custom post type if you like
+	'paged'          => $paged,
+	'posts_per_page' => 10
+));
+
+?>
+<?php my_pagination();?>
 	</div> <!-- end #left-area -->	
 <?php if ( ! $fullwidth ) get_sidebar(); ?>
 		
