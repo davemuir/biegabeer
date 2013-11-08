@@ -5,7 +5,7 @@ Template Name: Pages by Breweries
 ?>
 <?php get_header(); ?>
 
-<div id="content-area" class="clearfix fullwidth">
+<div id="content-area" class="clearfix">
 	
 	<div id="left-area">
 	
@@ -90,8 +90,19 @@ $count= 2;  } ?>
 	<?php endforeach; 
 	wp_reset_postdata();?>
 	
-			<ul class="longList">
+			
+
+
+	
+<!--start wrap again-->
+		
+<?php the_content(); ?>
+			<?php wp_link_pages(array('before' => '<p><strong>'.esc_attr__('Pages','Lucid').':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+			<?php edit_post_link(esc_attr__('Edit this page','Lucid')); ?>			
+				</div> 	<!-- end .post_content -->
+	</article> <!-- end .entry -->
 <!--end wrap for original gets country terms-->		
+<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
 <?php $args = array(
 	'posts_per_page'   => 2000,
 	'offset'           => 0,
@@ -122,9 +133,26 @@ $count= 2;  } ?>
 			if($brew == $postBreweryVar){ 
 						
 			?>
-			<li><a href="<?php echo $permalink ?> " > <?php echo get_the_title($postID) ?> </a></li>
-				
-		
+			<?php
+	
+
+	$image_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"]));
+	$beerStyle = get_the_category( $recent["ID"] );
+	$post = get_post($recent["ID"]);	
+	$content = $post->post_content;
+	$content = truncate_post(170,false);	
+
+
+	echo '<div class="post_content clearfix">
+	<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;margin-bottom:25px;border:2px solid #fda428;" ></div>';
+	?>
+	<?php 
+	echo '
+	<h2 class="title"><a href="'. $permalink .'">'. get_the_title($postID) .'</a></h2>';
+	echo '<p>'.$content.'</p>';
+	?>
+	  </div>
+	  </article>
 		
 	 	<?php } ?>
 		
@@ -134,15 +162,7 @@ $count= 2;  } ?>
 
 	<?php endforeach; 
 	wp_reset_postdata();?>
-</ul>	
 	
-<!--start wrap again-->
-		
-<?php the_content(); ?>
-			<?php wp_link_pages(array('before' => '<p><strong>'.esc_attr__('Pages','Lucid').':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-			<?php edit_post_link(esc_attr__('Edit this page','Lucid')); ?>			
-				</div> 	<!-- end .post_content -->
-	</article> <!-- end .entry -->
 <?php endwhile; // end of the loop. ?>	
 		
 <!--end wrap again-->		
@@ -153,7 +173,7 @@ $count= 2;  } ?>
 		
 	</div> <!-- end #left-area -->
 	
-	
+	<?php if ( ! $fullwidth ) get_sidebar(); ?>
 </div> 	<!-- end #content-area -->
 
 <?php get_footer(); ?>

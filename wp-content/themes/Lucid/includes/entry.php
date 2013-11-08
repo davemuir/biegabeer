@@ -10,11 +10,7 @@
 		$thumbnail = get_thumbnail($width,$height,$classtext,$titletext,$titletext,false,'Blogimage');
 		$thumb = $thumbnail["thumb"];
 
-		if ( $index_postinfo ){
-			echo '<p class="meta-info">';
-			et_postinfo_meta( $index_postinfo, et_get_option('lucid_date_format'), esc_html__('0 comments','Lucid'), esc_html__('1 comment','Lucid'), '% ' . esc_html__('comments','Lucid') );
-			echo '</p>';
-		}
+		
 	?>
 
 
