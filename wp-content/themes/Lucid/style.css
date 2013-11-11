@@ -314,7 +314,7 @@ float:left;
 margin-left:10px;
 }
 
-#main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/ricepaper3.png);background-repeat:repeat; border-bottom: 1px solid #eeeeee; position: relative;  }
+#main-header { background:url(http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/ricepaper3.png);background-repeat:repeat;  position: relative;  }
 #main-header:before { content: ''; position: absolute; height: 7px; bottom: -7px; left: 0; background: url(images/shadow.png) no-repeat top center; width: 100%; }
 	.container { text-align: left; margin: 0 auto; width: 960px; position: relative;line-height:1; }
 		#top-menu { border-right: 1px solid #e5e5e5; padding: 0 18px 0 23px; float: left; }
@@ -330,7 +330,7 @@ margin-left:10px;
 
 		#social-icons { float:left; border-left: 1px solid #fff; border-right: 1px solid #e5e5e5; padding: 23px 32px 19px; }
 			#social-icons a { padding-left: 4px; float: left; }
-		#search { float: left; border-left: 1px solid #fff; padding: 11px 32px 0 25px; }
+		#search { float: right;  padding: 11px 32px 11px 25px; }
 			#search-form { height: 35px; border:1px solid #e5e5e5; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; background-color: #fff; -webkit-box-shadow: 1px 1px 0 #fff; -moz-box-shadow: 1px 1px 0 #fff; box-shadow: 1px 1px 0 #fff; }
 				#search-form #searchinput { background: none; border: none; float: left; margin: 9px 14px 0 7px; width: 108px; padding-left: 6px; font-size: 12px; color: #4b4b4b; font-weight: lighter; }
 				#search-form #searchsubmit { margin-top: 12px; margin-right: 12px; }
