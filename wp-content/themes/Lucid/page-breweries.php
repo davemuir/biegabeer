@@ -102,7 +102,7 @@ $count= 2;  } ?>
 				</div> 	<!-- end .post_content -->
 	</article> <!-- end .entry -->
 <!--end wrap for original gets country terms-->		
-<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
+
 <?php $args = array(
 	'posts_per_page'   => 2000,
 	'offset'           => 0,
@@ -141,9 +141,12 @@ $count= 2;  } ?>
 	$post = get_post($recent["ID"]);	
 	$content = $post->post_content;
 	$content = truncate_post(170,false);	
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
+<?php
+	echo '
 
-
-	echo '<div class="post_content clearfix">
+<div class="post_content clearfix">
 	<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;margin-bottom:25px;border:2px solid #fda428;" ></div>';
 	?>
 	<?php 
