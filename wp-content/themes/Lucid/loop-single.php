@@ -2,14 +2,7 @@
 	<?php if (et_get_option('lucid_integration_single_top') <> '' && et_get_option('lucid_integrate_singletop_enable') == 'on') echo (et_get_option('lucid_integration_single_top')); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
-		<?php
-			$index_postinfo = et_get_option('lucid_postinfo2');
-			if ( $index_postinfo ){
-				echo '<p class="meta-info">';
-				et_postinfo_meta( $index_postinfo, et_get_option('lucid_date_format'), esc_html__('0 comments','Lucid'), esc_html__('1 comment','Lucid'), '% ' . esc_html__('comments','Lucid') );
-				echo '</p>';
-			}
-		?>
+		
 
 		<?php
 			global $wp_embed;
