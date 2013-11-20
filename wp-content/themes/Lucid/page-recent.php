@@ -42,12 +42,11 @@ Template Name: Pages by Recent
 	$postCount = 0;
 	
 	$args = array( 'posts_per_archive_page' => 10,'nopaging' => false,
-			
+	'orderby' => 'date',  		
 	'prev_next'    => True,
 	'prev_text'    => '<-Previous',
 'current'      => 0,
-'show_all'     => False,
-	
+
 'paged' => get_query_var('paged'), 
 
 			   'category__not_in' => array(871, 881),'tax_query' => array(
@@ -61,7 +60,7 @@ Template Name: Pages by Recent
 	) );
 	$recent_posts = wp_get_recent_posts( $args );
 	foreach( $recent_posts as $recent ){
-	if(++$postCount !== POSTS_PER_PAGE+1){ ?>
+	 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
 	<?php
 		$index_postinfo = et_get_option('lucid_postinfo1');
@@ -100,7 +99,7 @@ Template Name: Pages by Recent
 	</article> <!-- end .entry -->
 	<?php
 
-}
+
 
 }
 
