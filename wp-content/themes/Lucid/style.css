@@ -267,6 +267,7 @@ margin-right:20px;
 .beerStats{
 margin-top:32px;
 float:left;
+max-width:280px;
 }
 .beerStyle{
 color:orange;
