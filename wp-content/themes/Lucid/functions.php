@@ -17,7 +17,7 @@ if ( ! function_exists( 'my_pagination' ) ) :
 	}
 endif;
 
-add_action( 'after_setup_theme', 'et_setup_theme' );
+add_action( 'after_setup_theme', 'et_setup_theme' );  
 if ( ! function_exists( 'et_setup_theme' ) ){
 	function et_setup_theme(){
 		global $themename, $shortname, $et_store_options_in_one_row, $default_colorscheme;
