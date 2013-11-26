@@ -13,8 +13,10 @@ Template Name: Pages by Breweries
 <!--start wrap-->
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
-<?php $brew = $_GET['brew']; 
-			?>		
+<?php 
+$brew = $_GET['brew']; 
+$brewSan = str_replace("\'","'",$brew);
+?>		
 	<?php $count = 1; ?>
 	<?php $args = array(
 	'posts_per_page'   => 2000,
@@ -54,7 +56,7 @@ Template Name: Pages by Breweries
 
 			
 			<div class="post_content clearfix">
-			<h1 class="title"><?php echo $brew; ?></h1>	
+			<h1 class="title"><?php echo $brewSan; ?></h1>	
 <?php		
 	
 	$myposts = get_posts( $args );
@@ -69,7 +71,7 @@ Template Name: Pages by Breweries
 		
 		<?php 
 			
-			if($brew == $postBreweryVar && $count <= 1){ 
+			if($brewSan == $postBreweryVar && $count <= 1 ){ 
 						
 			?>
 			<p class="breweryInfo">
@@ -130,7 +132,7 @@ $count= 2;  } ?>
 	 	?>
 		
 		<?php 
-			if($brew == $postBreweryVar){ 
+			if($brewSan == $postBreweryVar){ 
 						
 			?>
 			<?php
