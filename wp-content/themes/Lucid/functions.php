@@ -448,7 +448,8 @@ if ( function_exists( 'get_custom_header' ) ) {
 		wp_enqueue_style( 'et_google_fonts_style', get_template_directory_uri() . '/epanel/google-fonts/et_google_fonts.css', array(), null );
 	}
 }
-function lorem_function() {
-  return "Last reviewed on:";
+function date_function() {
+$date = get_the_date();		
+  echo "Last reviewed on:". $date .".";
 }
-add_shortcode('lorem', 'lorem_function');
+add_shortcode('date', 'date_function');
