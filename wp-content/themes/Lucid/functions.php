@@ -449,6 +449,6 @@ if ( function_exists( 'get_custom_header' ) ) {
 	}
 }
 function lorem_function() {
-   "Last reviewed on:"
+  return "Last reviewed on:";
 }
 add_shortcode('lorem', 'lorem_function');
