@@ -449,7 +449,9 @@ if ( function_exists( 'get_custom_header' ) ) {
 	}
 }
 function date_function() {
-$date = get_the_date();		
-  echo "Last reviewed on:". $date .".";
+	$date = get_the_date();
+	$date = "Last Reviewed on : " . $date . ".";
+  return $date;
+
 }
 add_shortcode('date', 'date_function');
