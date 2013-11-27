@@ -4,8 +4,11 @@ Template Name: Pages by Region
 */
 ?>
 <?php get_header(); ?>
-
-<div id="content-area" class="clearfix fullwidth">
+<?php 
+	$variable = $_GET['var'];
+	
+	?>
+<div id="content-area" class="clearfix">
 	
 	<div id="left-area">
 		<?php get_template_part('includes/breadcrumbs', 'page'); ?>
@@ -28,12 +31,13 @@ Template Name: Pages by Region
 		<?php } ?>
 				<div class="post_content clearfix">
 			<h1 class="title"><?php the_title(); ?></h1>
+			<h2><?php echo $variable; ?></h2>
+</div> 	<!-- end .post_content -->
+
+</article> <!-- end .entry -->
 <!--end wrap for original gets-->	
-<ul class="longList">	
-<?php 
-	$variable = $_GET['var'];
-	
-	?>
+
+
 <?php $args = array(
 	'posts_per_page'   => 2000,
 	'offset'           => 0,
@@ -56,19 +60,37 @@ Template Name: Pages by Region
 
 	$myposts = get_posts( $args );
 	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-		<?php 
+<?php 
 	
 		$postID = get_the_ID();
 		$postRegionVar = get_post_meta($postID, "Region", true );
 	
 	 	?>
+
 			<?php 
 			if($variable == $postRegionVar){ 
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
+				$content = $post->post_content;
+				$content = truncate_post(170,false);
+				$image_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $postID));
 			?>
-			<li><a href="<?php echo $permalink ?>"> <?php echo $title ?></a></li>
-		
+			<article id="post-<?php $postID; ?>"   <?php post_class('entry clearfix'); ?>>
+			
+			<?php	
+			echo '<div class="post_content clearfix">
+	<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;margin-bottom:25px;border:2px solid #fda428;" ></div>';
+	?>
+	<?php 
+	echo '
+	<h2 class="title"><a href="'. $permalink .'">'. $title .'</a></h2>';
+	echo '<p>'.$content.'</p>';
+	?>
+	  
+		</div>
+	</article> <!-- end .entry -->	
+
+	 
 	 		<?php } ?>
 		
 	
@@ -76,16 +98,16 @@ Template Name: Pages by Region
 	<?php endforeach; 
 	wp_reset_postdata();?>
 
-</ul>
+
 <!--start wrap again-->
 		
-<?php the_content(); ?>
+
 			<?php wp_link_pages(array('before' => '<p><strong>'.esc_attr__('Pages','Lucid').':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			<?php edit_post_link(esc_attr__('Edit this page','Lucid')); ?>			
-				</div> 	<!-- end .post_content -->
-	</article> <!-- end .entry -->
-<?php endwhile; // end of the loop. ?>	
-		
+				
+	
+
+	<?php endwhile; // end of the loop. ?>		
 <!--end wrap again-->		
 		
 		
@@ -94,7 +116,7 @@ Template Name: Pages by Region
 		
 	</div> <!-- end #left-area -->
 	
-	
+	<?php if ( ! $fullwidth ) get_sidebar(); ?>
 </div> 	<!-- end #content-area -->
 
 <?php get_footer(); ?>
