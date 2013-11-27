@@ -15,7 +15,10 @@ Template Name: Pages by Breweries
 	<article id="post-<?php the_ID(); ?>" <?php post_class('entry clearfix'); ?>>
 <?php 
 $brew = $_GET['brew']; 
-$brewSan = str_replace("\'","'",$brew);
+$target = array("\'","%26");
+$replace = array("'","&");
+$brewSan = str_replace($target,$replace,$brew);
+
 ?>		
 	<?php $count = 1; ?>
 	<?php $args = array(

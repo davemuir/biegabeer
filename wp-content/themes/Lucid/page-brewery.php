@@ -99,7 +99,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -132,7 +132,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -165,7 +165,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -198,7 +198,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -231,7 +231,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -264,7 +264,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -297,7 +297,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -330,7 +330,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -363,7 +363,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -396,7 +396,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -429,7 +429,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -462,7 +462,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -495,7 +495,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -528,7 +528,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -561,7 +561,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -594,7 +594,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -627,7 +627,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -660,7 +660,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -693,7 +693,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -726,7 +726,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -759,7 +759,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -792,7 +792,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -825,7 +825,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -858,7 +858,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -891,7 +891,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
@@ -924,7 +924,7 @@ $brew = $_SESSION["brew"];
 				$setBrewery = $postBreweryVar;
 				$permalink = get_permalink($postID);
 				$title = get_the_title($postID);
-				$brew = $postBreweryVar;
+				$brew = str_replace("&","%26",$postBreweryVar);
 			?>
 				
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
