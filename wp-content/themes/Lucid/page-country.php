@@ -118,7 +118,7 @@ $brew = $_SESSION["brew"];
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -171,7 +171,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -224,7 +224,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -277,7 +277,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -330,7 +330,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -383,7 +383,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -436,7 +436,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -489,7 +489,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -542,7 +542,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -595,7 +595,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -648,7 +648,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -701,7 +701,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -754,7 +754,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -807,7 +807,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -860,7 +860,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -913,7 +913,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -966,7 +966,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -1019,7 +1019,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
@@ -1072,7 +1072,7 @@ endif;
 					$permalink = get_permalink($postID);
 					$title = get_the_title($postID);
 					$setBrewery = $postBreweryVar;
-					$brew = $postBreweryVar;
+					$brew = str_replace("&","%26",$postBreweryVar);
 				 ?>		
 				<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $brew ?>"> <?php echo $postBreweryVar ?></a></li>
 		
