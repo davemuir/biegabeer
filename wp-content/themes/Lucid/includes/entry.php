@@ -19,7 +19,7 @@
 		
 			<a href="<?php the_permalink(); ?>">
 				
-				<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url(<?php echo $thumb; ?>) no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;margin-bottom:25px;border:2px solid #fda428;" ></div>
+				<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;border-radius:45px;background: url(<?php echo $thumb; ?>) no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;margin-bottom:25px;border:2px solid #fda428;" ></div>
 			</a>
 		
 	<?php } ?><h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -28,6 +28,6 @@
 			if ( 'on' == et_get_option('lucid_blog_style') ) the_content('');
 			else echo '<p>' . truncate_post(170,false) . '</p>';
 		?>
-		<a href="<?php the_permalink(); ?>" class="more"><?php esc_html_e( 'Read More', 'Lucid' ); ?></a>
+		
 	</div> <!-- end .post_content -->
 </article> <!-- end .entry -->
