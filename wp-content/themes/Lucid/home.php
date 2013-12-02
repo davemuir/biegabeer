@@ -55,7 +55,7 @@
 	$beerStyle = get_the_category( $recent["ID"] );
 
 	echo'<div class="latest-3-info">';
-	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;border:2px solid #fda428;" ></div>';
+	echo '<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;border:2px solid #fda428;" ></div>';
 	
 	echo '<div class="3Info">
 	       <br/>Style <span class="orange">: </span>'.$beerStyle[0]->cat_name.'
