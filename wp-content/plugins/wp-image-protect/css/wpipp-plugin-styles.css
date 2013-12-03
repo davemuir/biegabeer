@@ -1,0 +1,227 @@
+/**
+* styles
+*/
+
+
+body {
+	min-width: 800px;
+	margin-top:0em;
+}
+
+.wpipp-install-check-info-wrapper {
+	display: block;
+	color: black;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #55DAE6;
+	background-image:url('../img/wpipp_install_check_logo_small.png');
+	background-repeat:no-repeat;
+	background-position: left center;
+	background-color: #B8CDD1;
+	min-height: 100px;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	z-index: 2;
+}
+
+.wpipp-styling-info-wrapper {
+	display: block;
+	color: black;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #55DAE6;
+	background-image:url('../img/wpipp_logo_small.png');
+	background-repeat:no-repeat;
+	background-position: left center;
+	background-color: #B8CDD1;
+	min-height: 100px;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	z-index: 2;
+}
+
+.wpipp-styling-info-text {
+	margin: 0.5em 120px;
+	padding: 2px;
+	font-family: Arial;
+
+}
+
+.wpipp-styling-info-text .wpipptitle {
+	font-size: 140%;
+	font-weight: bold;
+	margin-bottom: 4px;
+	display:block;
+
+}
+
+.wpipp-styling-info-text .wpippresult {
+	font-size: 110%;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	display:block;
+
+}
+
+.wpipp-styling-info-text .wpstatus {
+	display:block;
+}
+
+.wpipp-styling-info-text .wpippstatus {
+	display:block;
+}
+
+.wpipp-styling-info-text .info {
+	display:block;
+}
+
+.wpipp-styling-info-text .gdstatus {
+	display:block;
+}
+
+.wpipp-styling-close-button-container {
+	position: relative;
+	display:block;
+	top: 0;
+	right: 0;
+	display: block;
+}
+
+.wpipp-styling-close-button {
+	position: absolute;
+	display:block;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 30px;
+	font-family: sans-serif;
+	font-size: 20px;
+	cursor: pointer;
+	text-decoration: none;
+
+}
+
+.wpipp-styling-close-button:hover {
+	color: black;
+
+}
+
+.green-text {
+	color: #06B41A;
+	display: inline;
+
+}
+
+.red-text {
+	color: #C91127;
+	display: inline;
+
+}
+
+.blue-text {
+	color: #0099FF;
+	display: inline;
+
+}
+
+.orange-text {
+	color: #FF6633;
+	display: inline;
+
+}
+
+.section-title {
+	font-weight: normal;
+	font-size: 19px;
+	margin: 0;
+	padding: 8px 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: default !important;
+}
+
+.section-title i {
+	vertical-align: middle;
+	line-height: 50px;
+}
+
+.section-title span {
+	vertical-align: middle;
+	line-height: 20px;
+	margin-left: 10px;
+}
+
+.setting-content {
+	padding: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.wpipp-settings-panel h3 {
+
+}
+
+.find-out-center {
+	width: 210px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a.find-out-more {
+	color: #ffffff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	text-decoration: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 180px;
+}
+
+a.find-out-more:hover {
+	color: #eee;
+	background-color: #428bcb;
+}
+
+a.find-out-more span {
+	font-size: 20px;
+	margin-left: 5px;
+}
+
+
+.wpipp-box-left{
+	width: 65%;
+	display: block;
+	float: left;
+	padding-right: 15px;	
+}
+
+.wpipp-box-right{
+	width: 25%;
+	display: block;
+	float: left;	
+}
+
+
