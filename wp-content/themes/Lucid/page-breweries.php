@@ -79,7 +79,7 @@ $brewSan = str_replace($target,$replace,$brew);
 			?>
 			<p class="breweryInfo">
 				<?php echo $postBreweryInfoVar; ?><br/>
-				<a href="<?php echo $breweryLink ;?>">visit the official <?php echo $brew; ?> website</a>			
+				<a href="<?php echo $breweryLink ;?>">visit the official <?php echo $brewSan; ?> website</a>			
 			</p>
 				
 		
@@ -112,7 +112,7 @@ $count= 2;  } ?>
 	'posts_per_page'   => 2000,
 	'offset'           => 0,
 	'category'         => '',
-	'orderby'          => 'meta_value',
+	'orderby'          => 'title',
 	'order'            => 'ASC',
 	'include'          => '',
 	'exclude'          => '',

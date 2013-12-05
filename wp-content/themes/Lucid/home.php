@@ -1,6 +1,6 @@
 <?php get_header(); ?>
  <img id="mapBack" src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/backButton.png">
- <img id="recentBar" src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/recentreviews.png">
+ <a href="http://biegamanmaptest.herokuapp.com/?page_id=2151"><img id="recentBar" src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/recentreviews.png"></a>
 
 <?php include 'mapPack/world.php' ; ?>
 
@@ -33,7 +33,7 @@
 	
 	$postCount = 0;
 	define(POSTS_PER_PAGE,0);
-	$args = array( 'numberposts' => '3','category__not_in' => array(871, 881), 'tax_query' => array(
+	$args = array( 'numberposts' => '3','category__not_in' => array(871, 881),'post_status' => array('publish'), 'tax_query' => array(
 			array(
 				'taxonomy' => 'post_format',
 				'field' => 'slug',
@@ -45,10 +45,19 @@
 	
 	$recent_posts = wp_get_recent_posts( $args );
 	foreach( $recent_posts as $recent ){
-	if(++$postCount !== POSTS_PER_PAGE){echo '
+	if(++$postCount !== POSTS_PER_PAGE){
+	echo '
 	<div class="latest-3-posts">
 		<div class="latest-3-header">	
-	<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> 			
+	<a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' ?>
+<?php 
+$recentNew = $recent["post_title"]; 
+$leng = strlen($recentNew);
+echo substr($recentNew, 0, 35);
+
+if($leng > 35){
+echo "...";
+} echo'</a> 			
 	</div> ';
 
 	$image_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $recent["ID"]));
