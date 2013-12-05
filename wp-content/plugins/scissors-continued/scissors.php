@@ -1,18 +1,53 @@
 <?php
+/*
+Plugin Name: Scissors Continued
+Plugin URI: http://dev.huiz.net
+Description: Scissors Continued enhances WordPress' handling of images by introducing cropping, resizing, rotating, and watermarking functionality. Works from WordPress v2.9 and up.
+Version: 2.1
+Author: A. Huizinga
+Author URI: http://www.huiz.net/
 
-$scissors_dirname = plugin_basename(dirname(__FILE__));
-$scissors_locale_dir = PLUGINDIR . '/' . $scissors_dirname . '/languages';
-load_plugin_textdomain('scissors', false, $scissors_locale_dir);
+Original Plugin Name: Scissors
+Original Plugin URI: http://vimeo.com/7363026
+Original Version: 1.3.7
+Original Author: Stephan Reiter
+Original Author URI: http://stephanreiter.info/
 
-add_filter('wp_generate_attachment_metadata', 'scissors_resize_auto');
+Copyright (C) 2008  Stephan Reiter <stephan.reiter@gmail.com>
+Copyright (C) 2011  A. Huizinga <anton@huiz.net>
 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+if(version_compare($wp_version, '2.9', '<')) // integration check begin
+{
+	// Sorry, WordPress 2.8 and lower are not supported!
+	// You need Scissors v1.3.7 or you could upgrade WordPress.
+	// Anton, February 2011
+}
+else
+{
 
 function scissors_set_memory_limit()
 {
-	if ( intval( ini_get( 'memory_limit' ) ) < 64 ) @ini_set('memory_limit', '64M');
-	//@ini_set('memory_limit', '64M');
+	@ini_set('memory_limit', '256M');
 	//@ini_set('memory_limit', WP_MEMORY_LIMIT);
 }
+
+$scissors_dirname = plugin_basename(dirname(__FILE__));
+$scissors_locale_dir = PLUGINDIR . '/' . $scissors_dirname . '/languages';
+load_plugin_textdomain('scissors', $scissors_locale_dir);
 
 function scissors_create_image($width, $height)
 {
@@ -117,23 +152,16 @@ function scissors_get_fullpath_from_metadata($metadata)
 
 function scissors_resize_auto($metadata)
 {
-	
 	$srcW = intval($metadata['width']);
 	$srcH = intval($metadata['height']);
 	if($srcW <= 0 || $srcH <= 0)
 		return $metadata; // image dimensions are fishy ...
 
 	// skip full if temporarily disabled
-	$sizes = get_intermediate_image_sizes();
-	if(array_key_exists('scissorsSkipFullResize', $_REQUEST) && intval($_REQUEST['scissorsSkipFullResize']) != 0) {
-		$sizes = array_diff($sizes, array('full'));
-	}
-	
-	/*if(array_key_exists('scissorsSkipFullResize', $_REQUEST) && intval($_REQUEST['scissorsSkipFullResize']) != 0):
+	if(array_key_exists('scissorsSkipFullResize', $_REQUEST) && intval($_REQUEST['scissorsSkipFullResize']) != 0)
 		$sizes = array('large', 'medium');
-	else:
+	else
 		$sizes = array('full', 'large', 'medium');
-	endif;*/
 	
 	$filename = FALSE; $src = NULL; $src_mime_type = '';
 	foreach($sizes as $size)
@@ -187,7 +215,7 @@ function scissors_resize_auto($metadata)
 					if(scissors_save_image($dst, $filename, $src_mime_type))
 					{
 						$metadata['width'] = $dstW; $metadata['height'] = $dstH;
-						list($uwidth, $uheight) = wp_constrain_dimensions($metadata['width'], $metadata['height']);
+						list($uwidth, $uheight) = wp_shrink_dimensions($metadata['width'], $metadata['height']);
 						$metadata['hwstring_small'] = "height='$uheight' width='$uwidth'";
 					}
 				}
@@ -208,7 +236,7 @@ function scissors_resize_auto($metadata)
 	return $metadata;	
 }
 
-
+add_filter('wp_generate_attachment_metadata', 'scissors_resize_auto');
 
 function scissors_fullsize_fields()
 {
@@ -270,26 +298,8 @@ function scissors_autosize_add_settings()
 	add_settings_field('scissors_fullsize_fields', __('Full size', 'scissors'), 'scissors_fullsize_fields', 'media', 'default');
 }
 
-
-function scissors_activation () {
-	global $current_user ;
-		$user_id = $current_user->ID;
-		
-		$settings_notice = false;
-		$scissors_watermark_path = get_option('scissors_watermark_path');
-		if ( ! get_user_meta($user_id, 'scissors_activation_notice_ignore') && !$scissors_watermark_path ) {
-			echo  '<div class="updated"><p>The plugin <strong>Scissors and Watermark</strong> need to be set. Please visit the <a href="options-media.php#watermarking">' . __('Settings') . '</a> page | <a href="?scissors_activation_notice_ignore=0">Hide Notice</a>.</p></div>';
-		}
-}
-
-function scissors_activation_notice_ignore() {
-    global $current_user;
-        $user_id = $current_user->ID;
-        /* If user clicks to ignore the notice, add that to their user meta */
-        if ( isset($_GET['scissors_activation_notice_ignore']) && '0' == $_GET['scissors_activation_notice_ignore'] ) {
-             add_user_meta($user_id, 'scissors_activation_notice_ignore', 'true', true);
-    }
-}
+add_action('admin_init', 'scissors_autosize_add_settings');
+register_activation_hook(__FILE__, 'scissors_autosize_activation'); 
 
 
 function scissors_cropping()
@@ -304,7 +314,7 @@ function scissors_cropping_aspectmode()
 <label for="scissors_crop_defaultaspect_image"><?php _e('Maintain original aspect ratio.', 'scissors'); ?></label><br />
 <input id="scissors_crop_defaultaspect_user" type="radio" value="1" name="scissors_crop_defaultaspect" <?php checked('1', get_option('scissors_crop_defaultaspect')); ?>/>
 <?php
-$field = "<input style='width:2em;text-align:center;' class='small-text' type='text' name='scissors_crop_useraspectx' value='" . esc_attr(get_option('scissors_crop_useraspectx')) . "' />:<input style='width:2em;text-align:center;' class='small-text' type='text' name='scissors_crop_useraspecty' value='" . esc_attr(get_option('scissors_crop_useraspecty')) . "' />";
+$field = "<input style='width:2em;text-align:center;' class='small-text' type='text' name='scissors_crop_useraspectx' value='" . attribute_escape(get_option('scissors_crop_useraspectx')) . "' />:<input style='width:2em;text-align:center;' class='small-text' type='text' name='scissors_crop_useraspecty' value='" . attribute_escape(get_option('scissors_crop_useraspecty')) . "' />";
 echo sprintf(__('Lock aspect ratio to %s.', 'scissors'), $field);
 ?><br />
 <input id="scissors_crop_defaultaspect_none" type="radio" value="2" name="scissors_crop_defaultaspect" <?php checked('2', get_option('scissors_crop_defaultaspect')); ?>/>
@@ -339,6 +349,9 @@ function scissors_cropping_add_settings()
 	add_settings_field('scissors_cropping_aspectmode', __('Default aspect ratio', 'scissors'), 'scissors_cropping_aspectmode', 'media', 'cropping');
 	add_settings_field('scissors_cropping_reir', __('Default REIR state', 'scissors') . " <a href=\"http://www.useit.com/alertbox/9611.html\" target=\"_blank\">[?]</a>", 'scissors_cropping_reir', 'media', 'cropping');
 }
+
+add_action('admin_init', 'scissors_cropping_add_settings');
+register_activation_hook(__FILE__, 'scissors_cropping_activation');
 
 // Watermarking support -------------------------------------------------------
 
@@ -608,32 +621,28 @@ function scissors_watermark_file($filename)
 function scissors_rebuild_watermark_meta($image, $mime_type, $postId)
 {
 	$fullfilename = get_attached_file($postId);
-	
+
 	$done = FALSE;
 	if(scissors_is_watermarking_enabled('full', $postId, TRUE)) // only need meta if full image is modified, because all image operations use it as the base
 	{
-		
 		// determine the place and the size of the watermark if applied to this image
 		list($left, $top, $width, $height) = scissors_place_watermark($image);
-		
+
 		// back up the part of the image that will be overlaid with the watermark
 		$rect = scissors_create_image($width, $height);
-		
 		if(is_resource($rect))
 		{
 			if(imagecopy($rect, $image, 0, 0, $left, $top, $width, $height))
 			{
 				$oldconfig = scissors_load_watermark_configuration($postId);
-				$rectfilename = ($oldconfig == FALSE || $oldconfig == NULL) ? scissors_build_rect_filename($fullfilename) : $oldconfig['rectfilename'];
+				$rectfilename = ($oldconfig == FALSE) ? scissors_build_rect_filename($fullfilename) : $oldconfig['rectfilename'];
 				if(scissors_save_image($rect, $rectfilename, $mime_type))
 					$done = scissors_save_watermark_configuration($fullfilename, $rectfilename);
 			}
 			imagedestroy($rect);
 		}
 	}
-	
-	
-	
+
 	if(!$done)
 		scissors_delete_watermark_meta($fullfilename);						
 }
@@ -705,12 +714,13 @@ function scissors_apply_initial_watermarks($metadata)
 	return $metadata;
 }
 
-function scissors_watermarking() {
-?>
-	<a name="watermarking"></a>
-	<p><?php _e('The Scissors plugin supports automatic watermarking of images. Please configure this feature here ...', 'scissors') ?></p>
-<?php
-	}
+add_filter('wp_generate_attachment_metadata', 'scissors_apply_initial_watermarks');
+add_filter('wp_delete_file', 'scissors_delete_watermark_meta');
+
+function scissors_watermarking()
+{
+?><p><?php _e('The Scissors plugin supports automatic watermarking of images. Please configure this feature here ...', 'scissors') ?></p><?php
+}
 
 // never called, used to make sure that image sizes show up in localization tools
 function scissors_dummy()
@@ -719,7 +729,7 @@ function scissors_dummy()
 	__('medium', 'scissors');
 	__('thumbnail', 'scissors');
 	__('full', 'scissors');
-	//__('custom', 'scissors');
+	__('custom', 'scissors');
 }
 
 function scissors_watermarking_switch()
@@ -727,15 +737,14 @@ function scissors_watermarking_switch()
 	$enabled = get_option('scissors_watermark_enabled');
 	echo "<input name='scissors_watermark_enabled' id='scissors_watermark_enabled' type='hidden' value='$enabled'/>";
 	$sizes = apply_filters('intermediate_image_sizes', array('large', 'medium', 'thumbnail'));
-	$sizes[] = 'full'; //$sizes[] = 'custom';
+	$sizes[] = 'full'; $sizes[] = 'custom';
 	foreach($sizes as $size)
 	{
 		$checked = scissors_is_watermarking_enabled($size) ? "checked" : "";
-		echo "<input type='checkbox' id='scissors_watermark_target_$size' $checked";
+		echo " <input type='checkbox' id='scissors_watermark_target_$size' $checked";
 		echo " onchange=\"scissorsConfigEnableChanged('$size')\"";
 		echo "> <label class='align_watermark' for='scissors_watermark_target_$size'>" . __($size, 'scissors') . "</label>";
 	}
-	echo "<p class=\"description\">".__("If you want to automatically apply watermark to any of image size ('thumbnail', 'medium', 'large' or 'custom') after image is uploaded, the 'full' size must be checked!", "scissors" )."</p>";
 }
 
 function scissors_watermarking_path()
@@ -754,7 +763,7 @@ function scissors_watermarking_size()
 <label for="scissors_watermark_size_absolute"><?php _e('Do not resize the watermark.', 'scissors'); ?></label><br />
 <input id="scissors_watermark_size_relative" type="radio" value="1" name="scissors_watermark_size" <?php checked('1', get_option('scissors_watermark_size')); ?>/>
 <?php
-$field = '<input name="scissors_watermark_size_relative" type="text" value="' . esc_attr(get_option('scissors_watermark_size_relative')) . '" class="small-text" />';
+$field = '<input name="scissors_watermark_size_relative" type="text" value="' . attribute_escape(get_option('scissors_watermark_size_relative')) . '" class="small-text" />';
 echo sprintf(__('Limit the watermark to %s percent of the destination image area.', 'scissors'), $field);
 ?>
 </fieldset><?php
@@ -786,7 +795,7 @@ function scissors_watermarking_valign()
 function scissors_admin_head_watermark()
 {
 	global $scissors_dirname;
-	if( strstr($_SERVER['REQUEST_URI'], 'options-media') )
+	if(strstr($_SERVER['REQUEST_URI'], 'options-media'))
 	{
 		$wpurl = get_bloginfo('wpurl');
 		if(is_dir(WP_CONTENT_DIR . '/mu-plugins')) $wpurl .= 'files/'; // special treatment of WPMU installations
@@ -830,12 +839,19 @@ function scissors_watermarking_add_settings()
 	add_settings_field('scissors_watermarking_valign', __('Vertical alignment', 'scissors'), 'scissors_watermarking_valign', 'media', 'watermarking');
 }
 
+add_action('admin_print_scripts', 'scissors_admin_head_watermark'); 
+add_action('admin_init', 'scissors_watermarking_add_settings');
+register_activation_hook(__FILE__, 'scissors_watermarking_activation'); 
+
 function scissors_plugin_settings_link($links)
 {
 	$settings_link = '<a href="options-media.php">' . __('Settings') . '</a>';
 	array_unshift($links, $settings_link);
 	return $links;
 }
+
+$plugin = plugin_basename(__FILE__);
+add_filter("plugin_action_links_$plugin", 'scissors_plugin_settings_link' );
 
 function scissors_post_upload_ui()
 {
@@ -857,45 +873,33 @@ function scissors_post_upload_ui()
 	echo "</div>";
 }
 
+add_action('post-flash-upload-ui', 'scissors_post_upload_ui');
+add_action('post-html-upload-ui', 'scissors_post_upload_ui');
+
 // Manual cropping and resizing functionality ---------------------------------
 
 function scissors_admin_head()
 {
-	if( strstr($_SERVER['REQUEST_URI'], 'media') || strstr($_SERVER['REQUEST_URI'], 'post') )
+	if(strstr($_SERVER['REQUEST_URI'], 'media'))
 	{
-		global $scissors_dirname, $_wp_additional_image_sizes;
-
+		global $scissors_dirname;
+		
 		wp_enqueue_script('scissors_crop', '/' . PLUGINDIR . '/'.$scissors_dirname.'/js/jquery.Jcrop.js', array('jquery') );
 		wp_enqueue_script('scissors_js', '/' . PLUGINDIR . '/'.$scissors_dirname.'/js/scissors.js' );
-
+		
 		$thisUrl = admin_url('admin-ajax.php');
 		echo "<!-- JS loaded for Scissors in media library -->\n";
 		echo "<script type='text/javascript'>\n/* <![CDATA[ */\n";
 		echo "scissors = {\n";
 		echo "ajaxUrl: '$thisUrl'";
-
-		$intermediate_image_sizes = get_intermediate_image_sizes();
-		foreach ($intermediate_image_sizes as $size) {
-			if ($size=='large' || $size=='medium' || $size=='thumbnail') {
-				// standard WP sizes large, medium, thumbmnail
-				$width = intval(get_option("{$size}_size_w"));
-				$height = intval(get_option("{$size}_size_h"));
-				$aspectRatio = max(1, $width) / max(1, $height);
-				if(!get_option("{$size}_crop")) $aspectRatio = 0;
-
-			} else {
-				if (isset($_wp_additional_image_sizes[$size])) {
-					$width = $_wp_additional_image_sizes[$size]['width'];
-					$height = $_wp_additional_image_sizes[$size]['height'];
-					$aspectRatio = max(1, $width) / max(1, $height);
-					if(!$_wp_additional_image_sizes[$size]['crop']) $aspectRatio = 0;
-				} else {
-					$aspectRatio = 0;
-				}
-			}
-			echo ",\n'{$size}AspectRatio': $aspectRatio";
-		}		
-
+		foreach(array('large', 'medium', 'thumbnail') as $size)
+		{
+			$width = intval(get_option("{$size}_size_w"));
+			$height = intval(get_option("{$size}_size_h"));
+			$aspectRatio = max(1, $width) / max(1, $height);
+			if(!get_option("{$size}_crop")) $aspectRatio = 0;
+			echo ",\n{$size}AspectRatio: $aspectRatio";
+		}
 		echo "\n}\n";
 		echo "/* ]]> */\n</script>\n";
 		echo "<!-- End of JS loaded for Scissors in media library -->\n";
@@ -930,13 +934,24 @@ function gcd($a, $b)
 	}
 }
 
-//function scissors_media_meta($string, $post)
-function scissors_media_meta($post)
+function scissors_media_meta($string, $post)
 {
- 	global $wp_version;
-  	
-  	$string = '';
-	$errstr = '';
+
+  // From v2.9 the media box is different, there is one table cell more
+  global $wp_version;
+  if(version_compare($wp_version, '2.9', '>=')) 
+  {
+    $scissors_extra_cell = "</tr><tr>";
+    $scissors_hide_editbutton = "<style type='text/css'>input#imgedit-open-btn-".$post->ID."{display:none;}</style>";
+  }
+  else
+  {
+    $scissors_extra_cell = "";
+    $scissors_hide_editbutton = "";
+  }
+
+
+	$errstr = "";
 	
 	if(!scissors_supports_imagetype($post->post_mime_type))
 		$errstr = sprintf(__('Failed to load image. Image type %s not supported.', 'scissors'), $post->post_mime_type);
@@ -955,6 +970,8 @@ function scissors_media_meta($post)
 	
 	if($errstr != "")
 	{
+		$string .= "</td></tr>\n\t\t<tr>";
+		$string .= "<th valign='top' scope='row' class='label'><label>Scissors</label></th><td class='field'>";
 		$string .= "<p class='help'>$errstr</p>";
 	}
 	else
@@ -964,7 +981,6 @@ function scissors_media_meta($post)
 		$text_rotate = __('Rotate', 'scissors');
 		$text_watermarks = __('Watermarks', 'scissors');
 		$text_apply = __('Apply', 'scissors');
-		$text_reset = __('Reset watermarks', 'scissors');
 		$text_abort = __('Abort', 'scissors');
 		$text_crop2 = __('Crop %s.', 'scissors');
 		$text_crop3 = __('Lock aspect ratio to %s.', 'scissors');
@@ -978,12 +994,9 @@ function scissors_media_meta($post)
 		$nonce = wp_create_nonce("scissors-$postId");
 		$img_size = $width . '&nbsp;&times;&nbsp;' . $height;
     
-    	//$string .= "\n\n".$scissors_hide_editbutton."\n\n";
-		
-		$string .= "<div><span id='scissorsSize-$postId'>Dimensions: <strong>$img_size</strong></span></div>";
-		$string .= "\n\n<div>&nbsp;</div>\n";
-		$string .= "\n\n<div class=\"\">\n"; // WP 3.5
-		//$string .= "Scissors:";
+    $string .= "\n\n".$scissors_hide_editbutton."\n\n";
+		$string .= "<span id='scissorsSize-$postId'>($img_size - ".__('just edited', 'scissors').")</span></td></tr>\n\t\t<tr>".$scissors_extra_cell;
+		$string .= "<th valign='top' scope='row' class='label'><label>Scissors</label></th><td class='field'>";
 		$string .= "<div id='scissorsShowBtn-$postId'>";
 		$string .= "<button class='button' onclick=\"return scissorsShowCrop($postId, '$image_url')\">$text_crop</button>&nbsp;";
 		$string .= "<button class='button' onclick=\"return scissorsShowResize($postId)\">$text_resize</button>&nbsp;";
@@ -994,16 +1007,12 @@ function scissors_media_meta($post)
 		$cropTargets = "<select id='scissorsCropTarget-$postId' onchange=\"scissorsCropTargetChange($postId)\">";
 		$cropTargets .= "<option value='chain' selected='selected'>" . __('full chain', 'scissors') . "</option>";
 		$cropTargets .= "<option value='full'>" . __('full', 'scissors') . "</option>";
-
-		$metadata = wp_get_attachment_metadata($postId);
-		$mediasize = get_intermediate_image_sizes();
-		//$mediasize = array_keys( $metadata['sizes'] );
-		
-		if (is_array($mediasize)):
-			foreach($mediasize as $size) {
+  		$metadata = wp_get_attachment_metadata($postId);
+		if(is_array($metadata) && isset($metadata['sizes']) && count($metadata['sizes']) > 0)
+		{
+			foreach($metadata['sizes'] as $size => $value)
 				$cropTargets .= "<option value='$size'>" . __($size, 'scissors') . "</option>";
-			}
-		endif;
+		}
 		$cropTargets .= "</select>";
 
 		$aspectMode = get_option('scissors_crop_defaultaspect');
@@ -1072,28 +1081,25 @@ function scissors_media_meta($post)
 		$wstate = scissors_get_watermarking_state($postId);
 		$string .= "<input id='scissors_watermarking_state-$postId' type='hidden' value='$wstate'/>";
 		$sizes = (is_array($metadata) && isset($metadata['sizes']) && count($metadata['sizes']) > 0) ? array_keys($metadata['sizes']) : array();
-		$sizes[] = 'full'; //$sizes[] = 'custom';
+		$sizes[] = 'full'; $sizes[] = 'custom';
 		foreach($sizes as $size)
 		{
 			$checked = scissors_is_watermarking_enabled($size, $postId, TRUE) ? "checked" : "";
-			$string .= "<input type='checkbox' id='scissors_watermark_target_$size-$postId' $checked";
+			$string .= " <input type='checkbox' id='scissors_watermark_target_$size-$postId' $checked";
 			$string .= " onchange=\"scissorsWatermarkStateChanged($postId, '$size')\"";
 			$string .= "><label style='display:inline;font-size:11px' for='scissors_watermark_target_$size-$postId'>" . __($size, 'scissors') . "</label>";
 		}
-		$string .= " <button class='button' onclick=\"return scissorsWatermark($postId, '$nonce', false)\">$text_apply</button>";
-		$string .= " <button class='button' onclick=\"return scissorsWatermark($postId, '$nonce', '$wstate')\">$text_reset</button>";
+		$string .= " <button class='button' onclick=\"return scissorsWatermark($postId, '$nonce')\">$text_apply</button>";
 		$string .= "&nbsp;<button class='button' onclick=\"return scissorsAbortWatermark($postId)\">$text_abort</button>";
 		$string .= "</div>";
 
 		$string .= "<div class='scissorsPane scissorsWaitFld' id='scissorsWaitFld-$postId'></div>";
 	}
 	return $string;
-	//print $string;
 }
 
 function scissors_image_make_intermediate_size($file, $width, $height, $crop=false, $adaptive=false)
 {
-	
 	if($adaptive == '1')
 	{
 		$fullsize = getimagesize($file);
@@ -1102,14 +1108,13 @@ function scissors_image_make_intermediate_size($file, $width, $height, $crop=fal
 	}
 
 	$intermediate_result = image_make_intermediate_size($file, $width, $height, $crop);
-	
 	if(!$intermediate_result)
 	{
 		// simply use the specified file as the new intermediate albeit with smaller dimensions
 		$suffix = "{$width}x{$height}";
 		$info = pathinfo($file);
-		$dir = (isset($info['dirname'])) ? $info['dirname'] : '';
-		$ext = (isset($info['extension'])) ? $info['extension'] : '';
+		$dir = $info['dirname'];
+		$ext = $info['extension'];
 		$name = basename($file, ".{$ext}");
 		$destfilename = "{$dir}/{$name}-{$suffix}.{$ext}";
 		copy($file, $destfilename);
@@ -1128,83 +1133,41 @@ function scissors_has_thumbnail($metadata)
 
 function scissors_crop($post, $srcfile, $src)
 {
-	global $_wp_additional_image_sizes;
-
 	$x = intval($_POST['x']); $y = intval($_POST['y']);
 	$w = intval($_POST['w']); $h = intval($_POST['h']);
 	if($x >= 0 && $y >= 0 && $w > 0 && $h > 0)
 	{
 		$fullfile = get_attached_file($post->ID);
-		
-		// Check if exists files of custom sizes. If not we re-create all sizes including custom sizes.
-		if ( !empty( $_wp_additional_image_sizes ) )
-		{
-			$custom_sizes = array_keys( $_wp_additional_image_sizes );
-		
-			if ( in_array( $_POST['target'], $custom_sizes ) ):
-				 //	TODO: It re-create all sizes. It should to make only the custom size which miss
-				$attachment_metadata = get_post_meta($post->ID, '_wp_attachment_metadata');
-				$new_metadata = wp_generate_attachment_metadata( $post->ID, $fullfile );
-				if ( !wp_update_attachment_metadata( $post->ID, $new_metadata ) ):
-					return __('Can not update attachment metadata.', 'scissors');
-				endif;
-			endif;
-			
-		}
-		
-		//scissors_resize_auto($metadata);
-			/*
-			 * $metadata = array (
-	 	'width' => '',
-	 	'height' => '',
-	 	'file' => '%YEAR%MONTH%/file',
-		'sizes' => array (
-			'Custom' => array (
-				'file' => 'sport_1022-640x480.jpg',
-				'width' => '',
-	 			'height' => '',
-	 			'mime-type' => ''
-			),
-		),
-	 );
-			 */
-		$extension = pathinfo($fullfile, PATHINFO_EXTENSION);
-		
-		if($_POST['target'] == 'chain' || $_POST['target'] == 'full'):
+		if($_POST['target'] == 'chain' || $_POST['target'] == 'full')
 			$dstfile = $fullfile;
-		elseif($intermediate = image_get_intermediate_size($post->ID, $_POST['target'])):
-			$dstfile = tempnam(dirname($fullfile), 'scissors').'.'.$extension;			
-		else:
+		else if($intermediate = image_get_intermediate_size($post->ID, $_POST['target']))
+			$dstfile = tempnam(dirname($fullfile), 'scissors');
+		else
 			return __('Invalid target.', 'scissors');
-		endif;
+
 		// TODO: respect auto-size settings for full-sized image? cropping is no problem, but rotation ...
-	
+
 		$dst = scissors_create_image($w, $h);
-		
 		if(is_resource($dst))
 		{
 			if(imagecopy($dst, $src, 0, 0, $x, $y, $w, $h))
 			{
 				if(scissors_save_image($dst, $dstfile, $post->post_mime_type))
 				{
-					
-					if($dstfile == $fullfile) {
+					if($dstfile == $fullfile)
 						scissors_rebuild_watermark_meta($dst, $post->post_mime_type, $post->ID);
-					}
-					// scissors_apply_initial_watermarks();
-					//$metadata = get_intermediate_image_sizes();
+
 					$metadata = wp_get_attachment_metadata($post->ID);
-					//print_r ($metadata);
 					if($_POST['target'] == 'chain' || $_POST['target'] == 'full')
 					{
 						// update meta data for the full-size image
 						$metadata['width'] = $w; $metadata['height'] = $h;
-						list($uwidth, $uheight) = wp_constrain_dimensions($metadata['width'], $metadata['height']);
+						list($uwidth, $uheight) = wp_shrink_dimensions($metadata['width'], $metadata['height']);
 						$metadata['hwstring_small'] = "height='$uheight' width='$uwidth'";
 
 						$msg = "done;full,{$w},{$h}"; // signal change of the full-size image
 						if(!scissors_has_thumbnail($metadata)) $msg .= "+thumbnail,{$w},{$h}"; // full size image is used as thumbnail, force GUI updated
-						
+
 						// update existing intermediate images if requested
 						if($_POST['target'] == 'chain' && is_array($metadata) && isset($metadata['sizes']) && count($metadata['sizes']) > 0)
 						{
@@ -1240,18 +1203,7 @@ function scissors_crop($post, $srcfile, $src)
 									}
 								}
 	
-								//$resized = scissors_image_make_intermediate_size($srcfile, $w2, $h2, get_option("{$size}_crop"), get_option("{$size}_adaptive"));
-								
-								if ($size=='large' || $size=='medium' || $size=='thumbnail') {
-									$resized = scissors_image_make_intermediate_size($dstfile, get_option("{$size}_size_w"), get_option("{$size}_size_h"), get_option("{$size}_crop"), get_option("{$size}_adaptive"));
-								} else {
-									$nwidth = $_wp_additional_image_sizes[$size]['width'];
-									$nheight = $_wp_additional_image_sizes[$size]['height'];
-									$ncrop = $_wp_additional_image_sizes[$size]['crop'];
-									$nadaptive = ( isset($_wp_additional_image_sizes[$size]['adaptive']) ) ? $_wp_additional_image_sizes[$size]['adaptive'] : 0;
-									$resized = scissors_image_make_intermediate_size($dstfile, $nwidth, $nheight, $ncrop, $nadaptive);
-								}
-								
+								$resized = scissors_image_make_intermediate_size($srcfile, $w2, $h2, get_option("{$size}_crop"), get_option("{$size}_adaptive"));
 								if($resized)
 								{
 									$oldfile = path_join(dirname($fullfile), $data['file']);
@@ -1284,20 +1236,7 @@ function scissors_crop($post, $srcfile, $src)
 					else
 					{
 						$size = $_POST['target'];
-						//var_dump($_wp_additional_image_sizes);
-						//$resized = scissors_image_make_intermediate_size($dstfile, get_option("{$size}_size_w"), get_option("{$size}_size_h"), get_option("{$size}_crop"), get_option("{$size}_adaptive"));
-						
-						if ($size=='large' || $size=='medium' || $size=='thumbnail') {
-							$resized = scissors_image_make_intermediate_size($dstfile, get_option("{$size}_size_w"), get_option("{$size}_size_h"), get_option("{$size}_crop"), get_option("{$size}_adaptive"));
-						} else {
-							$nwidth = $_wp_additional_image_sizes[$size]['width'];
-							$nheight = $_wp_additional_image_sizes[$size]['height'];
-							$ncrop = $_wp_additional_image_sizes[$size]['crop'];
-							$nadaptive = ( isset($_wp_additional_image_sizes[$size]['adaptive']) ) ? $_wp_additional_image_sizes[$size]['adaptive'] : 0;
-							$resized = scissors_image_make_intermediate_size($dstfile, $nwidth, $nheight, $ncrop, $nadaptive);
-						}
-						
-						
+						$resized = scissors_image_make_intermediate_size($dstfile, get_option("{$size}_size_w"), get_option("{$size}_size_h"), get_option("{$size}_crop"), get_option("{$size}_adaptive"));
 						if($resized)
 						{
 							// overwrite the specified destination
@@ -1334,13 +1273,8 @@ function scissors_crop($post, $srcfile, $src)
 			$msg = __('Failed to allocate memory.', 'scissors');
 
 		// cleanup temporary file
-		if(isset($intermediate))
-			// Unlink temp file with extension
-			if (file_exists($dstfile)) unlink($dstfile);
-			// Because we added the extension to $dstfile for compatibility with WP 3.5, now we need to use the $dstfile just without extension
-			// // Unlink temp file without extension
-			$dstfile = pathinfo($dstfile, PATHINFO_DIRNAME) . '/' . pathinfo($dstfile, PATHINFO_FILENAME);
-			if (file_exists($dstfile)) unlink($dstfile);
+		if($intermediate)
+			unlink($dstfile);
 		return $msg;
 	}
 	else
@@ -1369,7 +1303,7 @@ function scissors_resize($post, $filename, $src)
 						// update meta data, no need to rebuild intermediate images because the aspect ratio always stays the same
 						$metadata = wp_get_attachment_metadata($post->ID);
 						$metadata['width'] = $w; $metadata['height'] = $h;
-						list($uwidth, $uheight) = wp_constrain_dimensions($metadata['width'], $metadata['height']);
+						list($uwidth, $uheight) = wp_shrink_dimensions($metadata['width'], $metadata['height']);
 						$metadata['hwstring_small'] = "height='$uheight' width='$uwidth'";
 						wp_update_attachment_metadata($post->ID, $metadata);
 						$msg = "done;full,{$w},{$h}"; // signal change of the full-size image
@@ -1463,13 +1397,13 @@ function scissors_action()
 	die($msg);
 }
 
-function scissors_media_meta_render($post) {
-	echo (scissors_media_meta($post));
-}
-
-function add_scissors_metabox($post) {
-    add_meta_box('scissors_metabox', 'Scissors and Watermark', 'scissors_media_meta_render', 'attachment', 'advanced', 'default');
-}
+add_filter('media_meta', 'scissors_media_meta', 99, 2);
+add_action('admin_print_scripts', 'scissors_admin_head');
+add_action('admin_print_styles', 'scissors_styles');
+add_action('wp_ajax_scissorsCrop', 'scissors_action');
+add_action('wp_ajax_scissorsResize', 'scissors_action');
+add_action('wp_ajax_scissorsRotate', 'scissors_action');
+add_action('wp_ajax_scissorsWatermark', 'scissors_action');
 
 // On-the-fly image resampling functionality ----------------------------------
 
@@ -1477,7 +1411,7 @@ class Scissors
 {
 	function Scissors()
 	{
-		//add_filter('mce_external_plugins', array(&$this, 'mce_external_plugins'));
+		add_filter('mce_external_plugins', array(&$this, 'mce_external_plugins'));
 		add_filter('content_save_pre', array(&$this, 'content_save_pre'));
 		add_action('save_post', array(&$this, 'save_post'));
 		add_action('delete_post', array(&$this, 'delete_post'));
@@ -1744,5 +1678,9 @@ class Scissors
 		return $filename;
 	}
 }
+
+$ScissorsInstance = new Scissors();
+
+} // integration check end
 
 ?>

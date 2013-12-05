@@ -42,7 +42,7 @@ function scissorsSelected(id, c) {
 	jQuery('#scissorsY-'+id).val(c.y);
 	jQuery('#scissorsW-'+id).val(c.w);
 	jQuery('#scissorsH-'+id).val(c.h);
-	var str = (c.w <= 0 || c.h <= 0) ? '' : '('+Math.round(c.x)+', '+Math.ceil(c.y)+') - ('+Math.ceil(c.x2)+', '+Math.ceil(c.y2)+'), [' + Math.ceil(c.w) + ' x ' + Math.ceil(c.h) + ']';
+	var str = (c.w <= 0 || c.h <= 0) ? '' : '('+c.x+', '+c.y+') - ('+c.x2+', '+c.y2+'), [' + c.w + ' x ' + c.h + ']';
 	jQuery('#scissorsSel-'+id).html(str);
 }
 
@@ -93,7 +93,7 @@ function scissorsCropTargetChange(id) {
 	} else {
 		jQuery('#scissorsReir-'+id).fadeOut('fast');
 	}
-	
+
 	if(scissors[mode + "AspectRatio"] > 0)
 		jQuery('#scissorsAspect-'+id).fadeOut('fast', function() { scissorsAspectChange(id); });
 	else
@@ -172,8 +172,7 @@ function scissorsPostQuery(id, data) {
 						jQuery('#scissorsCurHeight-' + id).val(t[2]);
 					} else if(t[0] == 'thumbnail') {
 						// force a reload of the thumbnail by appending a random query string to the url
-						//var thumbnail = jQuery('#media-item-'+id); // up to WP 3.4.2
-						var thumbnail = jQuery('#media-head-'+id); // since WP 3.5
+						var thumbnail = jQuery('#media-item-'+id);
 						if(thumbnail.length == 0) {
 							// when the flash uploader is employed media items are named 'media-item-SWFUpload_n_n' with n >= 0
 							// we therefore try to locate a scissors pane and navigate up to the media-item-info div object
@@ -297,10 +296,8 @@ function scissorsWatermarkStateChanged(id, size) {
 	jQuery('#scissors_watermarking_state-'+id).val(enabledStr);
 }
 
-function scissorsWatermark(id, nonce, reset) {
-	if (reset) _state = 0;
-	else _state = jQuery('#scissors_watermarking_state-'+id).val();
-	var data = { action: "scissorsWatermark", _wpnonce: nonce, post_id: id, state: _state };
+function scissorsWatermark(id, nonce) {
+	var data = { action: "scissorsWatermark", _wpnonce: nonce, post_id: id, state: jQuery('#scissors_watermarking_state-'+id).val() };
 	jQuery('#scissorsWatermarkPane-'+id).fadeOut('fast', function() {
 		jQuery('#scissorsWaitFld-'+id).fadeIn('fast', function() {
 			scissorsPostQuery(id, data);
