@@ -42,14 +42,15 @@ Template Name: Pages by Recent
 	$postCount = 0;
 	
 	$args = array( 'posts_per_archive_page' => 10,'nopaging' => false,
-	'orderby' => 'date',  		
+	'orderby' => 'date', 
+	'post_status' => array('publish'), 		
 	'prev_next'    => True,
 	'prev_text'    => '<-Previous',
 'current'      => 0,
 
 'paged' => get_query_var('paged'), 
 
-			   'category__not_in' => array(871, 881),'tax_query' => array(
+			   'category__not_in' => array(871, 881 , 922),'tax_query' => array(
 			array(
 				'taxonomy' => 'post_format',
 				'field' => 'slug',
