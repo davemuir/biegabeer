@@ -35,7 +35,7 @@ Template Name: Pages by Style
 <?php
 $args = array(
   'orderby' => 'name',
-   'category__not_in' => array(871, 881),
+   'category__not_in' => array(871, 881, 922),
   'parent' => 0
   );
 $categories = get_categories( $args );
@@ -49,7 +49,7 @@ foreach ( $categories as $category) {
 	$brew = $category->cat_ID;
 	$style = $catName;
 
-	if($catName != "Uncategorized" && $catName != "Travel" && $catName != "Recipes"){
+	if($catName != "Uncategorized" && $catName != "Travel" && $catName != "Recipes" && $catName != "Blog"){
 	echo '<a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew='. $brew .'&style='.$style.'"><h4 class="beerStyle">' . $category->name . '</h4></a>';
 	}
 

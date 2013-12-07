@@ -29,10 +29,16 @@
 			$abv = get_post_meta($id, "ABV", true ); 
 			$postImg = get_post_meta($id, "postImage", true );
 			$brewerInfo = get_post_meta($id, "breweryInfo", true );
+			$waterMark = get_post_meta($id, "Watermark", true );
 			$style = get_the_category();
 			$category_id = get_cat_ID( $style[0]->cat_name );
 			$breweryURL = str_replace("&","%26",$brewery);
 			 ?>
+			<?php if($waterMark == true){ ?>
+			<img class="waterMark" src="http://biegabeerandwine.s3.amazonaws.com/wp-content/uploads/2013/12/biegastampb2.png">
+			
+			 <?php } ?>
+			<!-- End watermark loop -->
 			<img class="postImage" src="<?php echo $postImg; ?>" />
 		<?php if($brewery != ""){ ?>
 			<ul class="beerStats">
