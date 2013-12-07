@@ -56,7 +56,7 @@
 	   </div>
 	<?php endif; ?>
 	<?php if ('open' == $post->comment_status) : ?>
-		<?php comment_form( array('label_submit' => esc_attr__( 'Submit Comment', 'Lucid' ), 'title_reply' => '<span>' . esc_attr__( 'Post a Reply', 'Lucid' ) . '</span>', 'title_reply_to' => esc_attr__( 'Leave a Reply to %s' )) ); ?>
+		<?php comment_form( array('comment_notes_after' => ' ','label_submit' => esc_attr__( 'Submit Comment', 'Lucid' ), 'title_reply' => '<span>' . esc_attr__( 'Post a Reply', 'Lucid' ) . '</span>', 'title_reply_to' => esc_attr__( 'Leave a Reply to %s' )) ); ?>
 	<?php else: ?>
 
 	<?php endif; // if you delete this the sky will fall on your head ?>
