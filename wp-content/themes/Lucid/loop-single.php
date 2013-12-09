@@ -34,13 +34,17 @@
 			$category_id = get_cat_ID( $style[0]->cat_name );
 			$breweryURL = str_replace("&","%26",$brewery);
 			 ?>
+			
 			<?php if($waterMark == true){ ?>
 			<img class="waterMark" src="http://biegabeerandwine.s3.amazonaws.com/wp-content/uploads/2013/12/biegastampb2.png">
 			
 			 <?php } ?>
 			<!-- End watermark loop -->
+			<div class="clear"></div>
+			<?php if($brewery != ""){ ?>
+			
 			<img class="postImage" src="<?php echo $postImg; ?>" />
-		<?php if($brewery != ""){ ?>
+			
 			<ul class="beerStats">
 			<li>Style : <a href="http://biegamanmaptest.herokuapp.com/?page_id=2591&brew=<?php echo $category_id; ?>&style=<?php echo $style[0]->cat_name; ?>"><?php echo $style[0]->cat_name; ?></a></li>
 			<li>Brewery : <a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew=<?php echo $breweryURL; ?> "><?php echo $brewery; ?></a></li>

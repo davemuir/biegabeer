@@ -14,7 +14,7 @@
 	?>
 
 
-	<div class="post_content clearfix">
+	<div class="post_content2 clearfix">
 		<?php if ( 'on' == et_get_option('lucid_thumbnails_index','on') && '' != $thumb ){ ?>
 		
 			<a href="<?php the_permalink(); ?>">
