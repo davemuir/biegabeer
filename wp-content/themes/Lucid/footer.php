@@ -10,8 +10,8 @@
 			<div class="socialButtons">
 			<a href="#" id="facebookSocial"></a>
 			<a href="#" id="twitterSocial"></a>
-			<a href="#" id=""><img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/instaSocial.png"></a>
-			<a href="#" id=""><img src="http://biegamanmaptest.herokuapp.com/wp-content/themes/Lucid/images/mailSocial.png"></a>	
+			<a href="#" id="instaSocial"></a>
+			<a href="#" id="mailSocial"></a>	
 			</div>
 		</div>
 	</div>
