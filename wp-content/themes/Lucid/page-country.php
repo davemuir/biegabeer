@@ -80,8 +80,8 @@ session_start();
 $brew = $_SESSION["brew"];
 
 ?>
-<ul>
-<h3 id="b" class="byCountryLetter" >B</h3>
+
+
 <?php		
 	
 	
@@ -120,10 +120,17 @@ $brew = $_SESSION["brew"];
 
 	<?php endforeach; 
 	wp_reset_postdata();?>
-</ul>		
+	
 <?php 
 		
-foreach(array_keys($garray) as $key){		
+foreach(array_keys($garray) as $key){
+$variable = substr($key, 0, 1);
+
+if($variable != $setLetter){
+$str = strtolower($variable);
+echo '<h3 id="'.$str.'" class="byCountryLetter" >'.$variable.'</h3>';
+$setLetter = $variable;
+}	
 echo $key;
 {
 

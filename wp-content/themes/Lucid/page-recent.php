@@ -85,14 +85,14 @@ Template Name: Pages by Recent
 	$post = get_post($recent["ID"]);	
 	$content = $post->post_content;
 	$content = truncate_post(170,false);	
-
+	
 
 	echo '<div class="post_content2 clearfix">
 	<div style="float:left;width:90px;height:90px;-webkit-border-radius: 45px;-moz-border-radius:45px;border-radius:45px;background: url('.$image_thumb[0].') no-repeat;background-size:90px 90px;margin-left:13px;margin-top:9px;margin-right:15px;margin-bottom:25px;border:2px solid #fda428;" ></div>';
 	?>
 	<?php 
 	echo '
-	<h2 class="title"><a href="'. get_permalink($recent["ID"]).'">'. $recent["post_title"] .'</a></h2>';
+	<h2 class="title"><a href="'. get_permalink($recent["ID"]).'">'. $recent["post_title"] .'</a><span><span> Date: </span>'.get_the_date('d/m/y').'</span></h2>';
 	echo '<p>'.$content.'</p>';
 	?>
 	  </div>
