@@ -142,7 +142,10 @@ echo $key;
 
 	if($value != $setVal){
 	$setVal = $value;
-	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew='.$value.'">'.$value.'</a></li>';
+	$target = array("\'","%26");
+	$replace = array("'","&");
+	$brewSan = str_replace($target,$replace,$value);
+	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew='.$value.'">'.$brewSan.'</a></li>';
 	}
    }
 	
