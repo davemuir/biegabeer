@@ -131,13 +131,13 @@ $str = strtolower($variable);
 echo '<h3 id="'.$str.'" class="byCountryLetter" >'.$variable.'</h3>';
 $setLetter = $variable;
 }	
-echo $key;
+echo '<h4>'.$key.'</h4>';
 {
 
    asort($garray[$key]);
  
   $final = array_values($garray[$key]);
- 
+ echo '<ul>';
    foreach($final as &$value){
 
 	if($value != $setVal){
@@ -148,7 +148,7 @@ echo $key;
 	echo '<li><a href="http://biegamanmaptest.herokuapp.com/?page_id=1771&brew='.$value.'">'.$brewSan.'</a></li>';
 	}
    }
-	
+ echo '</ul>';	
 }
 }
 	
