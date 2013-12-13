@@ -92,7 +92,7 @@ Template Name: Pages by Recent
 	?>
 	<?php 
 	echo '
-	<h2 class="title"><a href="'. get_permalink($recent["ID"]).'">'. $recent["post_title"] .'</a><span><span> On: </span>'.get_the_date('d/m/').'20'.get_the_date('y').'</span></h2>';
+	<h2 class="title"><a href="'. get_permalink($recent["ID"]).'"></h2>';
 	echo '<p>'.$content.'</p>';
 	?>
 	  </div>
