@@ -497,7 +497,7 @@
 			title
 				.addClass('fancybox-title-' + currentOpts.titlePosition)
 				.html( titleStr )
-				.appendTo( 'p' )
+				.appendTo( 'body' )
 				.show();
 
 			switch (currentOpts.titlePosition) {
@@ -1051,7 +1051,7 @@
 		outer.append(
 			content = $('<div id="fancybox-content"></div>'),
 			close = $('<a id="fancybox-close"></a>'),
-			title = $('<div id="fancybox-title"></div>'),
+			title = $('<div id="fancybox-title"><p></p></div>'),
 
 			nav_left = $('<a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a>'),
 			nav_right = $('<a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>')
