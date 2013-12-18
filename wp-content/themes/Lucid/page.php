@@ -4,7 +4,7 @@ $page_id     = get_queried_object_id();
 ?>
 
 <?php 
-if($page_id == 201 || $page_id == 3331 ){
+if($page_id == 201 || $page_id == 3331 || $page_id == 3291 || $page_id == 3311 || $page_id == 3271){
 get_header('101'); 
 }
 else{
