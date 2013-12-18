@@ -51,7 +51,7 @@
 				</div> <!-- end #search-form -->
 			</div> <!-- end #search -->
 		</div> <!-- end .container -->
-	</header> <!-- end #main-header -->
+
 
 	<?php
 		$use_header_banner = et_get_option( 'lucid_468_header_enable', 'false' );
@@ -78,7 +78,7 @@
 				</div> <!-- end #top_banner -->
 			<?php } ?>
 		</div>
-	
+		</header> <!-- end #main-header -->
 	
 	<div id="main-area">
 		<div class="container">
