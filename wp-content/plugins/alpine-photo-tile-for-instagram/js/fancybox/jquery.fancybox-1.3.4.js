@@ -295,7 +295,7 @@
 				h = h == 'auto' ? 'auto' : h + 'px';	
 			}
 
-			tmp.wrapInner('<div style="width:' + w + ';height:' + h + ';overflow: ' + (selectedOpts.scrolling == 'auto' ? 'auto' : (selectedOpts.scrolling == 'yes' ? 'scroll' : 'hidden')) + ';position:relative;"><p></p></div>');
+			tmp.wrapInner('<div style="width:' + w + ';height:' + h + ';overflow: ' + (selectedOpts.scrolling == 'auto' ? 'auto' : (selectedOpts.scrolling == 'yes' ? 'scroll' : 'hidden')) + ';position:relative;"></div>');
 
 			selectedOpts.width = tmp.width();
 			selectedOpts.height = tmp.height();
@@ -497,7 +497,7 @@
 			title
 				.addClass('fancybox-title-' + currentOpts.titlePosition)
 				.html( titleStr )
-				.appendTo( 'body' )
+				.appendTo( 'p' )
 				.show();
 
 			switch (currentOpts.titlePosition) {
