@@ -11,7 +11,7 @@
 			<a href="#" id="facebookSocial"></a>
 			<a href="https://twitter.com/BiegaBeerNWine" id="twitterSocial"></a>
 			<a href="http://instagram.com/biegabeerandwine/" id="instaSocial"></a>
-			<a href="mailto:biega.jan@gmail.com"mailSocial"></a>	
+			<a href="mailto:biega.jan@gmail.com" id="mailSocial"></a>	
 			</div>
 		</div>
 	</div>
