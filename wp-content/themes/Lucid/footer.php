@@ -9,9 +9,9 @@
 		<p class="midText">Biega Beer is founded by gastronome Jan Biega and is dedicated to exploring the culture and pleasures of beer.  This website features  reviews of more than 2500 beers from more than 700 breweries and 80 countries.  Biega Beer specializes in consulting and strategic development for craft breweries and has extensively researched online beer communities. </p>
 			<div class="socialButtons">
 			<a href="#" id="facebookSocial"></a>
-			<a href="#" id="twitterSocial"></a>
-			<a href="#" id="instaSocial"></a>
-			<a href="#" id="mailSocial"></a>	
+			<a href="https://twitter.com/BiegaBeerNWine" id="twitterSocial"></a>
+			<a href="http://instagram.com/biegabeerandwine/" id="instaSocial"></a>
+			<a href="mailto:biega.jan@gmail.com"mailSocial"></a>	
 			</div>
 		</div>
 	</div>
