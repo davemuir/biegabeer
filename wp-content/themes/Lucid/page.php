@@ -18,6 +18,9 @@ get_header('readings');
 else if($page_id == 1201 || $page_id == 1141 || $page_id == 1181 || $page_id == 1161 || $page_id == 2151){
 get_header('reviews');
 }
+else if($page_id == 881){
+get_header('recipes');
+}
 else{
 get_header(); 
 }
