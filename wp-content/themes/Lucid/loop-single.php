@@ -70,8 +70,13 @@
 	<?php 	}
 		}
 	?>
-
+	
 	<?php
+	if($category_id != 881 && $category_id != 922){
 		if ( 'on' == et_get_option('lucid_show_postcomments') ) comments_template('', true);
+	}
 	?>
 <?php endwhile; // end of the loop. ?>
+
+		
+	
