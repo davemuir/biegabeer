@@ -3,7 +3,11 @@
 Template Name: Pages by Categorized
 */
 ?>
-<?php get_header(); ?>
+<?php
+
+get_header('reviews');
+
+?>
 <?php $brew = $_GET['brew']; $style = $_GET['style']; ?>		
 <div id="content-area" class="clearfix">
 	<div id="left-area">
