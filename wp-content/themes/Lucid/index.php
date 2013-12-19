@@ -1,4 +1,17 @@
-<?php get_header(); ?>
+<?php
+$page_object = get_queried_object();
+$page_id = get_queried_object_id();
+$page_cat = get_query_var('cat'); 
+?>
+<?php 
+if($page_id == 881){
+get_header('recipes'); 
+}
+else{
+get_header();
+}
+ ?>
+
 
 <div id="content-area" class="clearfix">
 	<div id="left-area">
