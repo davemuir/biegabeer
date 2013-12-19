@@ -65,7 +65,7 @@
 					$color_scheme = ( 'Orange' == $color_scheme ) ? '' : '-' . strtolower( $color_scheme );
 					$logo = ( ( $user_logo = et_get_option('lucid_logo') ) && '' != $user_logo ) ? $user_logo : get_template_directory_uri() . "/images/logo{$color_scheme}.png";
 				?>
-				<img src="http://biegabeerandwine.s3.amazonaws.com/wp-content/uploads/2013/12/banner101.png" alt="<?php echo esc_attr( get_bloginfo('name')) ; ?>" id="logo"/>
+				<img src="http://biegabeerandwine.s3.amazonaws.com/wp-content/uploads/2013/12/masthead-about.png" alt="<?php echo esc_attr( get_bloginfo('name')) ; ?>" id="logo"/>
 			</a>
 
 			<?php if ( 'on' == $use_header_banner ){ ?>

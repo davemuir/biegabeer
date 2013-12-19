@@ -3,7 +3,18 @@
 Template Name: Pages by Region
 */
 ?>
-<?php get_header(); ?>
+<?php
+$page_object = get_queried_object();
+$page_id = get_queried_object_id();
+?>
+<?php 
+if($page_id == 1201 || $page_id == 1141 || $page_id == 1181 || $page_id == 1161 || $page_id == 2151){
+get_header('reviews');
+}
+else{
+get_header(); 
+}
+?>
 <?php 
 	$variable = $_GET['var'];
 	

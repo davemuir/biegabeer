@@ -3,7 +3,18 @@
 Template Name: Full Width Page
 */
 ?>
-<?php get_header(); ?>
+<?php
+$page_object = get_queried_object();
+$page_id = get_queried_object_id();
+?>
+<?php 
+if($page_id == 441){
+get_header('gallery'); 
+}
+else{
+get_header(); 
+}
+?>
 
 <div id="content-area" class="clearfix fullwidth">
 	<div id="left-area">

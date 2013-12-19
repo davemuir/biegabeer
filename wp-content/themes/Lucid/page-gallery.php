@@ -13,7 +13,18 @@ $gallery_cats = isset( $et_ptemplate_settings['et_ptemplate_gallerycats'] ) ? $e
 $et_ptemplate_gallery_perpage = isset( $et_ptemplate_settings['et_ptemplate_gallery_perpage'] ) ? (int) $et_ptemplate_settings['et_ptemplate_gallery_perpage'] : 12;
 ?>
 
-<?php get_header(); ?>
+<?php
+$page_object = get_queried_object();
+$page_id = get_queried_object_id();
+?>
+<?php 
+if($page_id == 441){
+get_header('gallery'); 
+}
+else{
+get_header(); 
+}
+?>
 
 <div id="content-area" class="clearfix<?php if ( $fullwidth ) echo ' fullwidth'; ?>">
 	<div id="left-area">
