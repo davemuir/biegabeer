@@ -32,7 +32,7 @@
 	set_post_thumbnail_size(90, 90);
 	
 	$postCount = 0;
-	define(POSTS_PER_PAGE,0);
+	define(POSTS_PER_PAGE,3);
 	$args = array( 'numberposts' => '3','category__not_in' => array(871, 881 , 922),'post_status' => array('publish'), 'tax_query' => array(
 			array(
 				'taxonomy' => 'post_format',

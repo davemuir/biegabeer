@@ -29,7 +29,7 @@ $et_ptemplate_blog_perpage = isset( $et_ptemplate_settings['et_ptemplate_blog_pe
 	'post_parent'      => '',
 	'post_status'      => 'publish',
 	'suppress_filters' => true ); ?>
-<?php get_header(); ?>
+<?php get_header('blog'); ?>
 
 <div id="content-area" class="clearfix<?php if ( $fullwidth ) echo ' fullwidth'; ?>">
 	<div id="left-area">
