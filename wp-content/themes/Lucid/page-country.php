@@ -142,7 +142,7 @@ $str = strtolower($variable);
 echo '<h3 id="'.$str.'" class="byCountryLetter" >'.$variable.'</h3>';
 $setLetter = $variable;
 }	
-echo '<h4>'.$key.'</h4>';
+echo '<h4 id="'.$key.'">'.$key.'</h4>';
 {
 
    asort($garray[$key]);
